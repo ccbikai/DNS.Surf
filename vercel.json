@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/dns-query",
+      "destination": "/api/dns-query"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/FKYHsnzM/:match*",
+      "destination": "https://dns.surf/_vercel/insights/:match*"
+    }
+  ]
+}
