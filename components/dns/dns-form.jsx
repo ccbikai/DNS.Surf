@@ -25,8 +25,8 @@ import isValidDomain from "is-valid-domain";
 
 import { DNSTypes } from "./dns-type";
 import DNSResolver from "../../doh.json";
-import { useEffect } from "react";
 import { useState } from "react";
+import { useSearchParams } from 'next/navigation'
 
 const formSchema = z.object({
   name: z
@@ -49,28 +49,17 @@ const formSchema = z.object({
   resolver: z.string(),
 });
 
-const defaultValues = {
-  name: '',
-  type: "A",
-  resolver: "cloudflare",
-}
-
 export function DNSForm({ onSearch }) {
+  const searchParams = useSearchParams()
   const form = useForm({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: searchParams.get('name') || '',
+      type: searchParams.get('type') || 'A',
+      resolver: searchParams.get('resolver') || 'cloudflare',
+    },
   });
   const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    const paramsList = ['name', 'type', 'resolver']
-    const params = new URLSearchParams(location.search)
-    paramsList.forEach((param) => {
-      // console.log(params.get(param), defaultValues[param], form)
-      setTimeout(() => {
-        form.setValue(param, params.get(param) || defaultValues[param])
-      }, 0)
-    })
-  }, [])
 
   function changeName(e) {
     const urlParser = z.string().url()
