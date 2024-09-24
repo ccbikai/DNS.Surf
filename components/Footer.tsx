@@ -78,7 +78,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://github.com/ccbikai"
+            href="https://github.com/ccbikai/DNS.Surf"
             target="_blank"
             title="GitHub"
             className="text-gray-400 hover:text-gray-500"
