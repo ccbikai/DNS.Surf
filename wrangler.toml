@@ -1,0 +1,7 @@
+name = "dns-surf"
+main = "lib/dns-query.ts"
+compatibility_date = "2022-07-12"
+
+workers_dev = false
+
+# nr deploy --var "CORS_ORIGIN:dns.surf" "WORKER_HOST:dns.html.zone"

@@ -8,6 +8,7 @@ import dohjs from "dohjs";
 import { Buffer } from "buffer";
 import * as z from 'zod'
 import { isDomain } from './dns-utils.js'
+import { getFlag } from './utils.ts'
 
 const { makeQuery, dnsPacket } = dohjs;
 
@@ -60,13 +61,17 @@ function FormatAnswer({ answer }) {
   }
 }
 
-export function DNSResult({ formData, region }) {
+export function DNSResult({ formData, region, config }) {
   const [result, setResult] = useState({});
+  const [regionInfo, setRegionInfo] = useState(null);
 
   useEffect(() => {
     const dnsQuery = async () => {
+      setRegionInfo(null);
       setResult({});
       try {
+        const isCloudflare = config.provider === 'cloudflare'
+        const dnsHost = isCloudflare ? process.env.NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST : ''
         const dnsQueryParams = makeQuery(formData.name, formData.type);
         const dnsQueryData = dnsPacket
           .encode(dnsQueryParams)
@@ -74,8 +79,8 @@ export function DNSResult({ formData, region }) {
           .toString("utf-8")
           .replace(/=/g, "");
         const dnsRes = await fetch(
-          `/api/region/${region}?dns=${dnsQueryData}&resolver=${formData.resolver
-          }&_=${Math.random()}`,
+          `${dnsHost}/api/region/${region}?dns=${dnsQueryData}&resolver=${formData.resolver
+          }&region=${region}&_=${Math.random()}`,
           {
             headers: {
               Accept: "application/dns-message",
@@ -89,6 +94,13 @@ export function DNSResult({ formData, region }) {
         const dnsRecords = dnsPacket.decode(Buffer.from(dnsData));
         const answers = dnsRecords.answers || [];
         console.log(dnsRecords);
+        if (isCloudflare) {
+          const cloudflareRegionInfo = dnsRes.headers.get('X-Country')
+          const cloudflareLocationInfo = dnsRes.headers.get('X-Location')
+          setRegionInfo(`${getFlag(cloudflareRegionInfo)} ${cloudflareLocationInfo}`)
+        } else {
+          setRegionInfo(`${REGIONS[region].flag || ''} ${REGIONS[region].location || ''}`)
+        }
         if (formData.time < result.time) {
           return
         }
@@ -110,7 +122,7 @@ export function DNSResult({ formData, region }) {
   return (
     <TableRow key={region}>
       <TableCell className="font-medium">
-        {REGIONS[region].flag} {REGIONS[region].location}
+        {regionInfo}
       </TableCell>
       {isSameQuery(result, formData) ? (
         <>

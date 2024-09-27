@@ -4,14 +4,15 @@ import withMDX from '@next/mdx'
 const nextConfig = {
   output: 'export',
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/api/:path*',
-  //       destination: 'https://dns.surf/api/:path*' // Proxy to Backend
-  //     }
-  //   ]
-  // }
+  // local development
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://dns.surf/api/:path*' // Proxy to Backend
+      }
+    ]
+  }
 };
 
 export default withMDX()(nextConfig);

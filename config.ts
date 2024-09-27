@@ -8,9 +8,18 @@ export const SITE = {
 }
 
 export const REGIONS = {
+  hk1: {
+    provider: 'cloudflare',
+  },
   hkg1: {
     flag: "🇭🇰",
     location: "Hong Kong",
+  },
+  tw1: {
+    provider: 'cloudflare',
+  },
+  jp1: {
+    provider: 'cloudflare',
   },
   hnd1: {
     flag: "🇯🇵",
@@ -60,21 +69,24 @@ export const REGIONS = {
     flag: "🇩🇪",
     location: "Frankfurt, Germany",
   },
+  us1: {
+    provider: 'cloudflare',
+  },
   iad1: {
     flag: "🇺🇸",
-    location: "Washington, D.C., USA",
+    location: "Washington, D.C., United States",
   },
   sfo1: {
     flag: "🇺🇸",
-    location: "San Francisco, USA",
+    location: "San Francisco, United States",
   },
   pdx1: {
     flag: "🇺🇸",
-    location: "Portland, USA",
+    location: "Portland, United States",
   },
   cle1: {
     flag: "🇺🇸",
-    location: "Cleveland, USA",
+    location: "Cleveland, United States",
   },
   gru1: {
     flag: "🇧🇷",
