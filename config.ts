@@ -1,5 +1,3 @@
-import { provider } from 'std-env'
-
 export const SITE = {
   title: 'DNS.Surf',
   tagline: 'Querying DNS Resolution Results in Different Regions Worldwide',
@@ -99,4 +97,4 @@ const CLOUDFLARE_REGIONS = {
   },
 }
 
-export const REGIONS = provider?.includes('cloudflare') ? CLOUDFLARE_REGIONS : VERCEL_REGIONS
+export const REGIONS = process.env.NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST ? CLOUDFLARE_REGIONS : VERCEL_REGIONS
