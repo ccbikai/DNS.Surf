@@ -41,16 +41,20 @@ app.get("*", async (c) => {
     return c.text("dns is required", 400);
   }
 
+
   const regionConfig: { provider: string } = REGIONS[region as keyof typeof REGIONS];
-  const requestByWorkerProxy = regionConfig.provider === "cloudflare" && c.req.header("X-Requested-With") !== "worker";
+
+  const requestFromWorker = c.req.header("X-Requested-With") === "worker"
+  const requestByWorkerProxy = regionConfig?.provider === "cloudflare" && !requestFromWorker;
 
   let dohServer = requestByWorkerProxy
     ? ['worker', `https://${c.env.WORKER_HOST}/dns-query`]
     : getResolver(resolver);
-  const DNSapi = /application\/dns-message/.test(accept)
+  const DNSapi = /application\/dns-message/.test(accept) && !requestByWorkerProxy
     ? `${dohServer[1]}?dns=${dns}`
     : `${dohServer[1]}${search}`;
 
+  console.log("DNS API", DNSapi);
   const res = requestByWorkerProxy
     ? await fetch(DNSapi, {
         headers: {
@@ -75,15 +79,15 @@ app.get("*", async (c) => {
     location: "",
   };
 
-  if (requestByWorkerProxy) {
-    regionInfo = getWorkerLocation(res.headers.get("cf-ray") || "");
+  if (requestFromWorker) {
+    regionInfo = await getWorkerLocation();
+    console.log("CF Worker RegionInfo", regionInfo);
   }
 
-  console.log("DNS query", DNSapi, regionInfo);
   return c.body(res.body, res.status, {
     ...Object.fromEntries(res.headers.entries()),
-    "X-Country": regionInfo.country || "",
-    "X-Location": regionInfo.location || "",
+    "X-Country": res.headers.get("X-Country") || regionInfo.country || "",
+    "X-Location": res.headers.get("X-Location") || regionInfo.location || "",
   });
 });
 

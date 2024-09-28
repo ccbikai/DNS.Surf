@@ -1,3 +1,5 @@
+const env = globalThis.process ? globalThis.process.env : { NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST: true }
+
 export const SITE = {
   title: 'DNS.Surf',
   tagline: 'Querying DNS Resolution Results in Different Regions Worldwide',
@@ -97,4 +99,4 @@ const CLOUDFLARE_REGIONS = {
   },
 }
 
-export const REGIONS = process.env.NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST ? CLOUDFLARE_REGIONS : VERCEL_REGIONS
+export const REGIONS = env.NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST ? CLOUDFLARE_REGIONS : VERCEL_REGIONS

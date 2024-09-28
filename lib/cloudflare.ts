@@ -1,6 +1,9 @@
 import COLOS from '../colo.json'
 
-export function getWorkerLocation(ray: string) {
-  const colo = ray?.split('-')[1] as keyof typeof COLOS
-  return COLOS[colo] || colo
+export async function getWorkerLocation() {
+  const res = await fetch('https://www.cloudflare.com/cdn-cgi/trace')
+  const text = await res.text()
+
+  const colo = /^colo=(.*)$/m.exec(text)?.[1] as keyof typeof COLOS
+  return COLOS[colo] || {}
 }
