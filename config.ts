@@ -99,4 +99,4 @@ const CLOUDFLARE_REGIONS = {
   },
 }
 
-export const REGIONS = provider === 'cloudflare_pages' ? CLOUDFLARE_REGIONS : VERCEL_REGIONS
+export const REGIONS = provider?.includes('cloudflare') ? CLOUDFLARE_REGIONS : VERCEL_REGIONS
