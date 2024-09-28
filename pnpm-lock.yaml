@@ -17,9 +17,6 @@ importers:
       '@next/mdx':
         specifier: ^14.2.5
         version: 14.2.5(@mdx-js/loader@3.0.1(webpack@5.93.0(esbuild@0.17.19)))(@mdx-js/react@3.0.1(@types/react@18.2.45)(react@18.2.0))
-      '@nwpr/airport-codes':
-        specifier: ^3.0.3
-        version: 3.0.3
       '@radix-ui/react-label':
         specifier: ^2.0.2
         version: 2.0.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -29,12 +26,6 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.45)(react@18.2.0)
-      airline-codes:
-        specifier: ^1.0.3
-        version: 1.0.3
-      airport-data-js:
-        specifier: ^1.0.6
-        version: 1.0.6
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -1272,9 +1263,6 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nwpr/airport-codes@3.0.3':
-    resolution: {integrity: sha512-8tWoRdHixVaI7rg77JJxTROqEJ6DwDmbO2Iu7fNG4gxb1aSlmkH5o+ohc6zz6j1Qteu7l5VFH7oU/sGTxyY1aw==}
-
   '@radix-ui/number@1.0.1':
     resolution: {integrity: sha512-T5gIdVO2mmPW3NNhjNgEP3cqMXjXL9UbO0BzWcXfvdBs+BohbQxvd/K5hSVKmn9/lbTdsQVKbUcP5WLCwvUbBg==}
 
@@ -1863,12 +1851,6 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
 
-  airline-codes@1.0.3:
-    resolution: {integrity: sha512-RJblJX29BxV/uPSREbtXf94JI3E0OvTqO58Z5X0DQTYdejplNHDhpjlvHTXBEdaoOv4X8OBbKaK4WGwhNztABQ==}
-
-  airport-data-js@1.0.6:
-    resolution: {integrity: sha512-maJD27ucD8Ik6EEkbUWOWVuLuQc4C0NpR0bm09PplwiURcqf/WSt88o+oxQ6ET4jlnz/DcimDnSwcaOt4wC5VQ==}
-
   ajv-keywords@3.5.2:
     resolution: {integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==}
     peerDependencies:
@@ -1969,9 +1951,6 @@ packages:
     resolution: {integrity: sha512-2R25rQZWP63nGwaAswvDazbPXfrM3HwVoBXK6HcqeKrSrL/JqcC/rDcf95l4r7LXLyxDXc8uQDa064GubtCABg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
-
-  backbone@1.6.0:
-    resolution: {integrity: sha512-13PUjmsgw/49EowNcQvfG4gmczz1ximTMhUktj0Jfrjth0MVaTxehpU+qYYX4MxnuIuhmvBLC6/ayxuAGnOhbA==}
 
   bail@2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
@@ -2281,19 +2260,6 @@ packages:
 
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
-
-  csv-generate@3.4.3:
-    resolution: {integrity: sha512-w/T+rqR0vwvHqWs/1ZyMDWtHHSJaN06klRqJXBEpDJaM/+dZkso0OKh1VcuuYvK3XM53KysVNq8Ko/epCK8wOw==}
-
-  csv-parse@4.16.3:
-    resolution: {integrity: sha512-cO1I/zmz4w2dcKHVvpCr7JVRu8/FymG5OEpmvsZYlccYolPBLoVGKUHgNoc4ZGkFeFlWGEDmMyBM+TTqRdW/wg==}
-
-  csv-stringify@5.6.5:
-    resolution: {integrity: sha512-PjiQ659aQ+fUTQqSrd1XEDnOr52jh30RBurfzkscaE2tPaFsDH5wOAHJiw8XAHphRknCwMUE9KRayc4K/NbO8A==}
-
-  csv@5.5.3:
-    resolution: {integrity: sha512-QTaY0XjjhTQOdguARF0lGKm5/mEq9PD9/VhZZegHDIBq2tQwgNpHc3dneD4mGo2iJs+fTKv5Bp0fZ+BRuY3Z0g==}
-    engines: {node: '>= 0.1.90'}
 
   dash-ast@1.0.0:
     resolution: {integrity: sha512-Vy4dx7gquTeMcQR/hDkYLGUnwVil6vk4FOOct+djUnHOUWt+zJPJAaRIXaAFkPXtJjvlY7o3rfRu0/3hpnwoUA==}
@@ -2859,9 +2825,6 @@ packages:
     resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
     engines: {node: '>= 6'}
 
-  https@1.0.0:
-    resolution: {integrity: sha512-4EC57ddXrkaF0x83Oj8sM6SLQHAWXw90Skqu2M4AEWENZ3F02dFJE/GARA8igO79tcgYqGrD7ae4f5L3um2lgg==}
-
   human-signals@1.1.1:
     resolution: {integrity: sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==}
     engines: {node: '>=8.12.0'}
@@ -3022,9 +2985,6 @@ packages:
   jsonify@0.0.1:
     resolution: {integrity: sha512-2/Ki0GcmuqSrgFyelQq9M05y7PS0mEwuIzrf3f1fPqkVDVRvZrPZtVSMHxdgo8Aq0sxAOb/cr2aqqA3LeWHVPg==}
 
-  jsonpack@1.1.5:
-    resolution: {integrity: sha512-d2vwomK605ks7Q+uCpbwGyoIF5j+UZuJjlYcugISBt3CxM+eBo/W6y63yVPIyIvbYON+pvJYsYZjCYbzqJj/xQ==}
-
   jsonparse@1.3.1:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
     engines: {'0': node >= 0.2.0}
@@ -3065,9 +3025,6 @@ packages:
 
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
@@ -3297,10 +3254,6 @@ packages:
     resolution: {integrity: sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==}
     engines: {node: '>= 8'}
 
-  mixme@0.5.10:
-    resolution: {integrity: sha512-5H76ANWinB1H3twpJ6JY8uvAtpmFvHNArpilJAjXRKXSDDLPIMoZArw5SH0q9z+lLs8IrMw7Q2VWpWimFKFT1Q==}
-    engines: {node: '>= 8.0.0'}
-
   mkdirp-classic@0.5.3:
     resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
 
@@ -3470,9 +3423,6 @@ packages:
 
   pako@1.0.11:
     resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
-
-  papaparse@5.4.1:
-    resolution: {integrity: sha512-HipMsgJkZu8br23pW15uvo6sib6wne/4woLZPlFf3rpDyMe9ywEXUsuD7+6K9PRkJlVT51j/sCOYDKGGS3ZJrw==}
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -4012,9 +3962,6 @@ packages:
   stream-to-promise@2.2.0:
     resolution: {integrity: sha512-HAGUASw8NT0k8JvIVutB2Y/9iBk7gpgEyAudXwNJmZERdMITGdajOa4VJfD/kNiA3TppQpTP4J+CtcHwdzKBAw==}
 
-  stream-transform@2.1.3:
-    resolution: {integrity: sha512-9GHUiM5hMiCi6Y03jD2ARC1ettBXkQBoQAe7nJsPknnI0ow10aXjTnew8QtYQmLjzn974BnmWEAJgCY6ZP1DeQ==}
-
   streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
     engines: {node: '>=10.0.0'}
@@ -4240,9 +4187,6 @@ packages:
   undeclared-identifiers@1.1.3:
     resolution: {integrity: sha512-pJOW4nxjlmfwKApE4zvxLScM/njmwj/DiUBv7EabwE4O8kRUy+HIwxQtZLBPll/jx1LJyBcqNfB3/cpv9EZwOw==}
     hasBin: true
-
-  underscore@1.13.7:
-    resolution: {integrity: sha512-GMXzWtsc57XAtguZgaQViUOzs0KTkk8ojr3/xAxXLITqf/3EMwxC0inyETfDFjH/Krbhuep0HNbbjI9i/q3F3g==}
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -5768,11 +5712,6 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  '@nwpr/airport-codes@3.0.3':
-    dependencies:
-      https: 1.0.0
-      papaparse: 5.4.1
-
   '@radix-ui/number@1.0.1':
     dependencies:
       '@babel/runtime': 7.23.6
@@ -6481,17 +6420,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  airline-codes@1.0.3:
-    dependencies:
-      JSONStream: 1.3.5
-      backbone: 1.6.0
-      csv: 5.5.3
-      lodash: 4.17.21
-
-  airport-data-js@1.0.6:
-    dependencies:
-      jsonpack: 1.1.5
-
   ajv-keywords@3.5.2(ajv@6.12.6):
     dependencies:
       ajv: 6.12.6
@@ -6605,10 +6533,6 @@ snapshots:
       '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.23.6)
     transitivePeerDependencies:
       - supports-color
-
-  backbone@1.6.0:
-    dependencies:
-      underscore: 1.13.7
 
   bail@2.0.2: {}
 
@@ -7005,19 +6929,6 @@ snapshots:
       css-tree: 2.2.1
 
   csstype@3.1.3: {}
-
-  csv-generate@3.4.3: {}
-
-  csv-parse@4.16.3: {}
-
-  csv-stringify@5.6.5: {}
-
-  csv@5.5.3:
-    dependencies:
-      csv-generate: 3.4.3
-      csv-parse: 4.16.3
-      csv-stringify: 5.6.5
-      stream-transform: 2.1.3
 
   dash-ast@1.0.0: {}
 
@@ -7622,8 +7533,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  https@1.0.0: {}
-
   human-signals@1.1.1: {}
 
   iconv-lite@0.4.24:
@@ -7771,8 +7680,6 @@ snapshots:
 
   jsonify@0.0.1: {}
 
-  jsonpack@1.1.5: {}
-
   jsonparse@1.3.1: {}
 
   labeled-stream-splicer@2.0.2:
@@ -7803,8 +7710,6 @@ snapshots:
   lodash.memoize@3.0.4: {}
 
   lodash.merge@4.6.2: {}
-
-  lodash@4.17.21: {}
 
   longest-streak@3.1.0: {}
 
@@ -8233,8 +8138,6 @@ snapshots:
       minipass: 3.3.6
       yallist: 4.0.0
 
-  mixme@0.5.10: {}
-
   mkdirp-classic@0.5.3: {}
 
   mkdirp@0.5.6:
@@ -8386,8 +8289,6 @@ snapshots:
   p-finally@2.0.1: {}
 
   pako@1.0.11: {}
-
-  papaparse@5.4.1: {}
 
   parent-module@1.0.1:
     dependencies:
@@ -8912,10 +8813,6 @@ snapshots:
       end-of-stream: 1.1.0
       stream-to-array: 2.3.0
 
-  stream-transform@2.1.3:
-    dependencies:
-      mixme: 0.5.10
-
   streamsearch@1.1.0: {}
 
   string-width@4.2.3:
@@ -9182,8 +9079,6 @@ snapshots:
       get-assigned-identifiers: 1.2.0
       simple-concat: 1.0.1
       xtend: 4.0.2
-
-  underscore@1.13.7: {}
 
   undici-types@5.26.5: {}
 
