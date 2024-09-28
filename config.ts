@@ -1,3 +1,5 @@
+import { provider } from 'std-env'
+
 export const SITE = {
   title: 'DNS.Surf',
   tagline: 'Querying DNS Resolution Results in Different Regions Worldwide',
@@ -7,19 +9,10 @@ export const SITE = {
   url: 'https://dns.surf'
 }
 
-export const REGIONS = {
-  hk1: {
-    provider: 'cloudflare',
-  },
+const VERCEL_REGIONS = {
   hkg1: {
     flag: "🇭🇰",
     location: "Hong Kong",
-  },
-  tw1: {
-    provider: 'cloudflare',
-  },
-  jp1: {
-    provider: 'cloudflare',
   },
   hnd1: {
     flag: "🇯🇵",
@@ -69,9 +62,6 @@ export const REGIONS = {
     flag: "🇩🇪",
     location: "Frankfurt, Germany",
   },
-  us1: {
-    provider: 'cloudflare',
-  },
   iad1: {
     flag: "🇺🇸",
     location: "Washington, D.C., United States",
@@ -92,4 +82,21 @@ export const REGIONS = {
     flag: "🇧🇷",
     location: "São Paulo, Brazil",
   },
-};
+}
+
+const CLOUDFLARE_REGIONS = {
+  hk1: {
+    provider: 'cloudflare',
+  },
+  tw1: {
+    provider: 'cloudflare',
+  },
+  jp1: {
+    provider: 'cloudflare',
+  },
+  us1: {
+    provider: 'cloudflare',
+  },
+}
+
+export const REGIONS = provider === 'cloudflare_pages' ? CLOUDFLARE_REGIONS : VERCEL_REGIONS

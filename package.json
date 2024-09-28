@@ -25,6 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.2",
+    "std-env": "^3.7.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

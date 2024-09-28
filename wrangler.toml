@@ -4,4 +4,7 @@ compatibility_date = "2022-07-12"
 
 workers_dev = false
 
+[observability]
+enabled = true
+
 # nr deploy --var "CORS_ORIGIN:dns.surf" "WORKER_HOST:dns.html.zone"

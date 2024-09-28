@@ -41,13 +41,8 @@ app.get("*", async (c) => {
     return c.text("dns is required", 400);
   }
 
-  const regionConfig = REGIONS[region as keyof typeof REGIONS];
-
-  const requestByWorkerProxy =
-    regionConfig &&
-    "provider" in regionConfig &&
-    regionConfig.provider === "cloudflare" &&
-    !c.req.header("x-no-proxy");
+  const regionConfig: { provider: string } = REGIONS[region as keyof typeof REGIONS];
+  const requestByWorkerProxy = regionConfig.provider === "cloudflare" && c.req.header("X-Requested-With") !== "worker";
 
   let dohServer = requestByWorkerProxy
     ? ['worker', `https://${c.env.WORKER_HOST}/dns-query`]
@@ -60,8 +55,8 @@ app.get("*", async (c) => {
     ? await fetch(DNSapi, {
         headers: {
           accept: accept,
-          "user-agent": c.req.header("User-Agent") || "",
-          "x-no-proxy": "true",
+          "User-Agent": c.req.header("User-Agent") || "",
+          "X-Requested-With": "worker",
         },
         // @ts-ignore
         cf: {
@@ -71,7 +66,7 @@ app.get("*", async (c) => {
     : await fetch(DNSapi, {
         headers: {
           accept: accept,
-          "user-agent": c.req.header("User-Agent") || "",
+          "User-Agent": c.req.header("User-Agent") || "",
         },
       });
 
