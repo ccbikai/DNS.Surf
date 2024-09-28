@@ -85,13 +85,13 @@ const VERCEL_REGIONS = {
 }
 
 const CLOUDFLARE_REGIONS = {
-  hk1: {
-    provider: 'cloudflare',
-  },
   tw1: {
     provider: 'cloudflare',
   },
   jp1: {
+    provider: 'cloudflare',
+  },
+  sg1: {
     provider: 'cloudflare',
   },
   us1: {
