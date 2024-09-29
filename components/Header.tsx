@@ -55,11 +55,6 @@ export default function Footer () {
               >
                 <a
                   className="w-full px-6 py-2 mr-0 text-gray-700 cursor-pointer md:px-3 md:mr-2 lg:mr-3 md:w-auto"
-                  href="/about"
-                  title="About"
-                  >About</a>
-                <a
-                  className="w-full px-6 py-2 mr-0 text-gray-700 cursor-pointer md:px-3 md:mr-2 lg:mr-3 md:w-auto"
                   href="/privacy"
                   title="Privacy"
                   >Privacy</a>

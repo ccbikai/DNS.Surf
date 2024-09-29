@@ -11,15 +11,11 @@ export function DNSFeature() {
             <ul>
               <li className="flex items-center py-2 space-x-4 xl:py-3">
                 <span className="icon-[subway--world] w-8 h-8 text-teal-500"></span>
-                <span className="font-medium text-gray-500">Supporting DNS Queries from 18 Regions</span>
+                <span className="font-medium text-gray-500">Supporting DNS Queries from Different Regions</span>
               </li>
               <li className="flex items-center py-2 space-x-4 xl:py-3">
                 <span className="icon-[ant-design--cloud-server-outlined] w-8 h-8 text-sky-500"></span>
                 <span className="font-medium text-gray-500">Supporting 100+ DNS Resolvers</span>
-              </li>
-              <li className="flex items-center py-2 space-x-4 xl:py-3">
-                <span className="icon-[devicon--vercel] w-8 h-8"></span>
-                <span className="font-medium text-gray-500">100% Run on Vercel</span>
               </li>
             </ul>
           </div>
