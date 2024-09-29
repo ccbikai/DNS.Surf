@@ -108,10 +108,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '8.39.214.56',
   },
-  bt1: {
-    provider: 'cloudflare',
-    ip: '172.69.219.130',
-  },
+  // bt1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.69.219.130',
+  // },
   hk1: {
     provider: 'cloudflare',
     ip: '162.158.113.66',
