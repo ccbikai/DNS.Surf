@@ -2,7 +2,6 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 
-import { REGIONS } from "../../config";
 import { useState } from "react";
 import dohjs from "dohjs";
 import { Buffer } from "buffer";
@@ -73,6 +72,7 @@ export function DNSResult({ formData, region, config }) {
     try {
       const isCloudflare = config.provider === 'cloudflare'
       const dnsHost = isCloudflare ? process.env.NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST : ''
+      console.log('dnsHost', dnsHost, config)
       const dnsQueryParams = makeQuery(formData.name, formData.type);
       const dnsQueryData = dnsPacket
         .encode(dnsQueryParams)
@@ -100,7 +100,7 @@ export function DNSResult({ formData, region, config }) {
         const cloudflareLocationInfo = dnsRes.headers.get('X-Location')
         setRegionInfo(`${getFlag(cloudflareRegionInfo) || ''} ${cloudflareLocationInfo || ''}`)
       } else {
-        setRegionInfo(`${REGIONS[region].flag || ''} ${REGIONS[region].location || ''}`)
+        setRegionInfo(`${config.flag || ''} ${config.location || ''}`)
       }
       if (formData.time < result.time) {
         return

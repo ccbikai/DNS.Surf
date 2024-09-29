@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/table";
 import { DNSResult } from "./dns-result";
 
-import { REGIONS } from "../../config";
+import { REGIONS } from "@/config";
 
 export function DNSTable({ formData }) {
   return (

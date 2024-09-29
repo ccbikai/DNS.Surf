@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import doh from "../doh.json";
-import { REGIONS } from "../config";
+import { CLOUDFLARE_REGIONS } from "../config/cloudflare";
 import { getWorkerLocation } from "./cloudflare";
 
 type Bindings = {
@@ -41,8 +41,7 @@ app.get("*", async (c) => {
     return c.text("dns is required", 400);
   }
 
-
-  const regionConfig: { provider: string } = REGIONS[region as keyof typeof REGIONS];
+  const regionConfig: { provider: string } = CLOUDFLARE_REGIONS[region as keyof typeof CLOUDFLARE_REGIONS];
 
   const requestFromWorker = c.req.header("X-Requested-With") === "worker"
   const requestByWorkerProxy = regionConfig?.provider === "cloudflare" && !requestFromWorker;

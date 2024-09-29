@@ -24,7 +24,7 @@ import {
 import isValidDomain from "is-valid-domain";
 
 import { DNSTypes } from "./dns-type";
-import DNSResolver from "../../doh.json";
+import DNSResolver from "@/doh.json";
 import { useState } from "react";
 import { useSearchParams } from 'next/navigation'
 
