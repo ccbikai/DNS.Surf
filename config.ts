@@ -110,12 +110,12 @@ export const CLOUDFLARE_REGIONS = {
   },
   bt1: {
     provider: 'cloudflare',
-    ip: '8.20.124.8',
+    ip: '172.69.219.130',
   },
-  // hk1: {
-  //   provider: 'cloudflare',
-  //   ip: '8.20.100.1',
-  // },
+  hk1: {
+    provider: 'cloudflare',
+    ip: '162.158.113.66',
+  },
   in1: {
     provider: 'cloudflare',
     ip: '8.28.213.66',
@@ -160,7 +160,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   se1: {
     provider: 'cloudflare',
-    ip: '8.14.199.66',
+    ip: '8.40.140.6',
   },
   be1: {
     provider: 'cloudflare',
@@ -232,7 +232,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   lt1: {
     provider: 'cloudflare',
-    ip: '8.39.207.6',
+    ip: '172.69.188.166',
   },
   bg1: {
     provider: 'cloudflare',
