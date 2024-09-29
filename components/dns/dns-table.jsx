@@ -24,7 +24,7 @@ export function DNSTable({ formData }) {
         <TableBody>
           {Object.keys(REGIONS).map((region) => (
             <DNSResult
-              key={`${region}`}
+              key={`${region}-${formData.time}`}
               formData={formData}
               region={region}
               config={REGIONS[region]}

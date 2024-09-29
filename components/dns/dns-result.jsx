@@ -3,12 +3,14 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { REGIONS } from "../../config";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import dohjs from "dohjs";
 import { Buffer } from "buffer";
 import * as z from 'zod'
 import { isDomain } from './dns-utils.js'
 import { getFlag } from './utils.ts'
+
+import { useInView } from "react-intersection-observer";
 
 const { makeQuery, dnsPacket } = dohjs;
 
@@ -65,67 +67,74 @@ export function DNSResult({ formData, region, config }) {
   const [result, setResult] = useState({});
   const [regionInfo, setRegionInfo] = useState(null);
 
-  useEffect(() => {
-    const dnsQuery = async () => {
-      setRegionInfo(null);
-      setResult({});
-      try {
-        const isCloudflare = config.provider === 'cloudflare'
-        const dnsHost = isCloudflare ? process.env.NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST : ''
-        const dnsQueryParams = makeQuery(formData.name, formData.type);
-        const dnsQueryData = dnsPacket
-          .encode(dnsQueryParams)
-          .toString("base64")
-          .toString("utf-8")
-          .replace(/=/g, "");
-        const dnsRes = await fetch(
-          `${dnsHost}/api/region/${region}?dns=${dnsQueryData}&resolver=${formData.resolver
-          }&region=${region}&_=${Math.random()}`,
-          {
-            headers: {
-              Accept: "application/dns-message",
-            }
-          },
-        );
-        if (!dnsRes.ok) {
-          throw new Error(dnsRes.statusText)
-        }
-        const dnsData = await dnsRes.arrayBuffer()
-        const dnsRecords = dnsPacket.decode(Buffer.from(dnsData));
-        const answers = dnsRecords.answers || [];
-        console.log(dnsRecords);
-        if (isCloudflare) {
-          const cloudflareRegionInfo = dnsRes.headers.get('X-Country')
-          const cloudflareLocationInfo = dnsRes.headers.get('X-Location')
-          setRegionInfo(`${getFlag(cloudflareRegionInfo)} ${cloudflareLocationInfo}`)
-        } else {
-          setRegionInfo(`${REGIONS[region].flag || ''} ${REGIONS[region].location || ''}`)
-        }
-        if (formData.time < result.time) {
-          return
-        }
-        setResult({
-          ...formData,
-          rcode: dnsRecords.rcode,
-          answers,
-        });
-      } catch (error) {
-        console.error(error);
-        setResult({
-          error: error.message,
-        });
+  const dnsQuery = async () => {
+    setRegionInfo(null);
+    setResult({});
+    try {
+      const isCloudflare = config.provider === 'cloudflare'
+      const dnsHost = isCloudflare ? process.env.NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST : ''
+      const dnsQueryParams = makeQuery(formData.name, formData.type);
+      const dnsQueryData = dnsPacket
+        .encode(dnsQueryParams)
+        .toString("base64")
+        .toString("utf-8")
+        .replace(/=/g, "");
+      const dnsRes = await fetch(
+        `${dnsHost}/api/region/${region}?dns=${dnsQueryData}&resolver=${formData.resolver
+        }&region=${region}&_=${Math.random()}`,
+        {
+          headers: {
+            Accept: "application/dns-message",
+          }
+        },
+      );
+      if (!dnsRes.ok) {
+        throw new Error(dnsRes.statusText)
       }
-    };
-    dnsQuery();
-  }, [formData]);
+      const dnsData = await dnsRes.arrayBuffer()
+      const dnsRecords = dnsPacket.decode(Buffer.from(dnsData));
+      const answers = dnsRecords.answers || [];
+      console.log(dnsRecords);
+      if (isCloudflare) {
+        const cloudflareRegionInfo = dnsRes.headers.get('X-Country')
+        const cloudflareLocationInfo = dnsRes.headers.get('X-Location')
+        setRegionInfo(`${getFlag(cloudflareRegionInfo) || ''} ${cloudflareLocationInfo || ''}`)
+      } else {
+        setRegionInfo(`${REGIONS[region].flag || ''} ${REGIONS[region].location || ''}`)
+      }
+      if (formData.time < result.time) {
+        return
+      }
+      setResult({
+        ...formData,
+        rcode: dnsRecords.rcode,
+        answers,
+      });
+    } catch (error) {
+      console.error(error);
+      setResult({
+        error: error.message,
+      });
+    }
+  };
+
+  const { ref } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+    onChange: (inView, entry) => {
+      if (inView && !result.time) {
+        dnsQuery();
+      }
+    }
+  });
 
   return (
-    <TableRow key={region}>
-      <TableCell className="font-medium">
-        {regionInfo}
-      </TableCell>
+    <TableRow key={region} ref={ref}>
       {isSameQuery(result, formData) ? (
         <>
+          <TableCell className="font-medium">
+            {regionInfo}
+          </TableCell>
           <TableCell>
             {Array.isArray(result.answers)
               ? result.answers.map((answer) => {
@@ -157,6 +166,9 @@ export function DNSResult({ formData, region, config }) {
         </TableCell>
       ) : (
         <>
+          <TableCell>
+            <Skeleton className="h-5 w-full" />
+          </TableCell>
           <TableCell>
             <Skeleton className="h-5 w-full" />
           </TableCell>

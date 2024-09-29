@@ -7,7 +7,8 @@
     "local": "vercel dev",
     "worker": "wrangler dev",
     "deploy": "wrangler deploy",
-    "postinstall": "node scripts/colo.mjs"
+    "postinstall": "node scripts/colo.mjs",
+    "cf-dns": "tsx --env-file=.env scripts/cf-dns.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
@@ -25,6 +26,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.2",
+    "react-intersection-observer": "^9.13.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
@@ -45,6 +47,7 @@
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.19",
     "class-variance-authority": "^0.7.0",
+    "cloudflare": "^3.5.0",
     "clsx": "^2.0.0",
     "hono": "^3.11.7",
     "prettier": "^3.1.1",
@@ -53,6 +56,7 @@
     "tailwind-merge": "^2.2.0",
     "tailwindcss": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.19.1",
     "typescript": "*",
     "vercel": "^32.4.1",
     "wrangler": "^3.78.10"
