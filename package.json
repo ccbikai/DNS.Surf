@@ -1,13 +1,15 @@
 {
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "local": "vercel dev",
     "worker": "wrangler dev",
     "deploy": "wrangler deploy",
-    "postinstall": "node scripts/colo.mjs",
+    "postinstall": "node scripts/colo.mjs && simple-git-hooks || true",
     "cf-dns": "tsx --env-file=.env scripts/cf-dns.mjs"
   },
   "dependencies": {
@@ -30,7 +32,9 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
     "@cloudflare/workers-types": "^4.20240925.0",
+    "@eslint-react/eslint-plugin": "^1.14.2",
     "@hookform/resolvers": "^3.3.2",
     "@iconify-json/ant-design": "^1.1.13",
     "@iconify-json/devicon": "^1.1.33",
@@ -49,10 +53,16 @@
     "class-variance-authority": "^0.7.0",
     "cloudflare": "^3.5.0",
     "clsx": "^2.0.0",
+    "eslint": "^9.11.1",
+    "eslint-plugin-format": "^0.1.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.12",
     "hono": "^3.11.7",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "raw-loader": "^4.0.2",
+    "simple-git-hooks": "^2.11.1",
     "tailwind-merge": "^2.2.0",
     "tailwindcss": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
@@ -61,5 +71,10 @@
     "vercel": "^32.4.1",
     "wrangler": "^3.78.10"
   },
-  "packageManager": "pnpm@9.9.0"
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
 }

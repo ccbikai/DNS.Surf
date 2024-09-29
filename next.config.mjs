@@ -9,10 +9,10 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:3000/api/:path*' // Proxy to Backend
-      }
+        destination: 'http://localhost:3000/api/:path*', // Proxy to Backend
+      },
     ]
-  }
-};
+  },
+}
 
-export default withMDX()(nextConfig);
+export default withMDX()(nextConfig)

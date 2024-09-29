@@ -7,5 +7,5 @@ export const DNSTypes = [
   'PTR',
   'SOA',
   'SRV',
-  'TXT'
+  'TXT',
 ]

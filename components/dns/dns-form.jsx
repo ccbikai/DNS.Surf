@@ -1,8 +1,4 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -10,8 +6,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 
 import {
   Select,
@@ -19,22 +15,26 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select'
+import DNSResolver from '@/doh.json'
+import { zodResolver } from '@hookform/resolvers/zod'
 
-import isValidDomain from "is-valid-domain";
+import isValidDomain from 'is-valid-domain'
 
-import { DNSTypes } from "./dns-type";
-import DNSResolver from "@/doh.json";
-import { useState } from "react";
 import { useSearchParams } from 'next/navigation'
+
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
+import { DNSTypes } from './dns-type'
 
 const formSchema = z.object({
   name: z
     .string({
-      required_error: "Please input a domain.",
+      required_error: 'Please input a domain.',
     })
     .refine(
-      (val) =>
+      val =>
         isValidDomain(val, {
           subdomain: true,
           wildcard: false,
@@ -42,12 +42,12 @@ const formSchema = z.object({
           topLevel: true,
         }),
       {
-        message: "Invalid Domain Name.",
+        message: 'Invalid Domain Name.',
       },
     ),
   type: z.string(),
   resolver: z.string(),
-});
+})
 
 export function DNSForm({ onSearch }) {
   const searchParams = useSearchParams()
@@ -58,7 +58,7 @@ export function DNSForm({ onSearch }) {
       type: searchParams.get('type') || 'A',
       resolver: searchParams.get('resolver') || 'cloudflare',
     },
-  });
+  })
   const [loading, setLoading] = useState(false)
 
   function changeName(e) {
@@ -72,7 +72,7 @@ export function DNSForm({ onSearch }) {
 
   function onSubmit(formData) {
     setLoading(true)
-    onSearch(formData);
+    onSearch(formData)
     setTimeout(() => {
       setLoading(false)
     }, 5000)
@@ -109,7 +109,7 @@ export function DNSForm({ onSearch }) {
                     <SelectValue placeholder="Record type" />
                   </SelectTrigger>
                   <SelectContent>
-                    {DNSTypes.map((type) => (
+                    {DNSTypes.map(type => (
                       <SelectItem key={type} value={type}>
                         {type}
                       </SelectItem>
@@ -136,7 +136,7 @@ export function DNSForm({ onSearch }) {
                     <SelectValue placeholder="DNS Resolver" />
                   </SelectTrigger>
                   <SelectContent>
-                    {DNSResolver.map((server) => (
+                    {DNSResolver.map(server => (
                       <SelectItem key={server[0]} value={server[0]}>
                         {server[0]}
                       </SelectItem>
@@ -156,5 +156,5 @@ export function DNSForm({ onSearch }) {
         </Button>
       </form>
     </Form>
-  );
+  )
 }
