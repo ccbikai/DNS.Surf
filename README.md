@@ -33,8 +33,8 @@ Supports deployment to either Vercel or Cloudflare, independently.
 ### Deploy to Cloudflare
 
 1. [Fork](https://github.com/ccbikai/DNS.Surf/fork) the project to your GitHub
-2. Create a Worker locally using `npm run deploy --var "CORS_ORIGIN:$CORS_ORIGIN" "WORKER_HOST:$WORKER_HOST"`. Please modify the variable value: `$CORS_ORIGIN` to the domain name of your web page for cross-origin verification, and `$WORKER_HOST` to the access domain name of your Worker for source retrieval.
-3. Link the Worker to GitHub in Cloudflare Dashboard and configure build script `npm run deploy --var "CORS_ORIGIN:$CORS_ORIGIN" "WORKER_HOST:$WORKER_HOST"`
+2. Create a Worker locally using `npm run deploy -- --var "CORS_ORIGIN:dns.surf" "WORKER_HOST:dns.html.zone"`. Please modify the variable value: `$CORS_ORIGIN` to the domain name of your web page for cross-origin verification, and `$WORKER_HOST` to the access domain name of your Worker for source retrieval.
+3. Link the Worker to GitHub in Cloudflare Dashboard and configure build script `npm run deploy -- --var "CORS_ORIGIN:dns.surf" "WORKER_HOST:dns.html.zone"`
 4. Configure DNS resolution
    1. After copying the ENV file locally using `cp .env.example .env`
    2. Modify `WORKER_HOST` to the access domain of the Worker, `CLOUDFLARE_ZONE_ID` to the ID of the domain's ZONE, and `CLOUDFLARE_API_TOKEN` to the Cloudflare API Token, which needs permissions for 'reading user information', 'editing Workers', and 'editing DNS'
