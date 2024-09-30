@@ -4,6 +4,7 @@ import withMDX from '@next/mdx'
 const nextConfig = {
   output: 'export',
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  assetPrefix: process.env.ASSET_PREFIX,
   // local development
   async rewrites() {
     return [
