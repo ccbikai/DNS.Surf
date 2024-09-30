@@ -34,7 +34,7 @@ Clouflare 的 Worker 部署在全球，通过访问固定区域的 Worker 使用
 
 1. [Fork](https://github.com/ccbikai/DNS.Surf/fork) 项目到你 GitHub
 2. 本地使用 `npm run deploy` 创建一个 Worker
-3. 在 Clouflare Dashboard 给 Worker 关联 GitHub, 并配置打包环境变量。`CORS_ORIGIN` 网页的域名，用于跨域校验，`WORKER_HOST` Worker 的访问域名，用于回源。
+3. 在 Clouflare Dashboard 给 Worker 关联 GitHub, 并配置环境变量。`CORS_ORIGIN` 网页的域名，用于跨域校验，`WORKER_HOST` Worker 的访问域名，用于回源。
 4. 配置 DNS 解析
    1. 本地使用 `cp .env.example .env` 复制 ENV 文件后
    2. 修改 `WORKER_HOST` 为 Worker 的访问域名, `CLOUDFLARE_ZONE_ID` 对应域名 ZONE 的 ID, `CLOUDFLARE_API_TOKEN` Clouflare 的 API Token, 需要有`读取用户信息`，`编辑 Worker`, `编辑 DNS`权限

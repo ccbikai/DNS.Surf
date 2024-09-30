@@ -34,8 +34,11 @@ Supports deployment to either Vercel or Cloudflare, independently.
 
 1. [Fork](https://github.com/ccbikai/DNS.Surf/fork) the project to your GitHub
 2. Create a Worker locally using `npm run deploy`
-3. Link the Worker to GitHub in Cloudflare Dashboard and configure build environment variables
+3. Link the Worker to GitHub in Cloudflare Dashboard and configure environment variables
 4. Configure DNS resolution
+   1. After copying the ENV file locally using `cp .env.example .env`
+   2. Modify `WORKER_HOST` to the access domain of the Worker, `CLOUDFLARE_ZONE_ID` to the ID of the domain's ZONE, and `CLOUDFLARE_API_TOKEN` to the Cloudflare API Token, which needs permissions for 'reading user information', 'editing Workers', and 'editing DNS'
+   3. Then use `npm run cf-dns` to configure DNS resolution.
 5. Create a new Pages project on Cloudflare
 6. Select the DNS.Surf project and `Next.js(static)` framework
 7. Set environment variables and deploy
