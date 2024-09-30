@@ -1,0 +1,13 @@
+name = "dns-surf-worker"
+main = "lib/dns-query.ts"
+compatibility_date = "2024-09-25"
+workers_dev = false
+
+[limits]
+cpu_ms = 10
+
+# prod
+# nr deploy --var "CORS_ORIGIN:dns.surf" "WORKER_HOST:dns.html.zone"
+
+# preview
+# nr deploy --name dns-surf-preview --var "CORS_ORIGIN:pages.dev" "WORKER_HOST:dns-preview.html.zone"

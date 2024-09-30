@@ -2,5 +2,5 @@ export { default } from '../dns-query'
 
 export const config = {
   runtime: 'edge',
-  regions: ['lhr1']
+  regions: ['lhr1'],
 }

@@ -145,3 +145,7 @@ dist
 
 .vercel
 .DS_Store
+.wrangler
+.dev.vars
+
+colo.json

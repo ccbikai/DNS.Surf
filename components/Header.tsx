@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { cn } from "@/lib/utils"
-import { useState } from "react"
+import { cn } from '@/lib/utils'
+import { useState } from 'react'
 
-export default function Footer () {
+export default function Footer() {
   const [showMenu, setShowMenu] = useState(false)
   return (
     <section className="pb-6 bg-white">
@@ -22,14 +22,18 @@ export default function Footer () {
               >
                 <span className="w-6 h-6 icon-[mdi--dots-triangle]"></span>
               </span>
-              <span className="mx-2">DNS<dot className="text-indigo-600">.</dot>Surf</span>
+              <span className="mx-2">
+                DNS
+                <dot className="text-indigo-600">.</dot>
+                Surf
+              </span>
             </a>
           </div>
           <div
             className={
               cn(
-                "top-0 left-0 items-start hidden w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 md:absolute lg:text-base md:bg-transparent md:p-0 md:relative md:flex touch-none",
-                {'flex fixed': showMenu, 'hidden': !showMenu }
+                'top-0 left-0 items-start hidden w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 md:absolute lg:text-base md:bg-transparent md:p-0 md:relative md:flex touch-none',
+                { 'flex fixed': showMenu, 'hidden': !showMenu },
               )
             }
           >
@@ -44,9 +48,13 @@ export default function Footer () {
                 <span
                   className="flex items-center justify-center w-8 h-8 text-white bg-gray-900 rounded-full"
                 >
-                <span className="w-6 h-6 icon-[mdi--email-outline]"></span>
+                  <span className="w-6 h-6 icon-[mdi--email-outline]"></span>
                 </span>
-                <span className="mx-2">DNS<dot className="text-indigo-600">.</dot>Surf</span>
+                <span className="mx-2">
+                  DNS
+                  <dot className="text-indigo-600">.</dot>
+                  Surf
+                </span>
               </a>
               <div className="w-full">
               </div>
@@ -55,39 +63,43 @@ export default function Footer () {
               >
                 <a
                   className="w-full px-6 py-2 mr-0 text-gray-700 cursor-pointer md:px-3 md:mr-2 lg:mr-3 md:w-auto"
-                  href="/about"
-                  title="About"
-                  >About</a>
-                <a
-                  className="w-full px-6 py-2 mr-0 text-gray-700 cursor-pointer md:px-3 md:mr-2 lg:mr-3 md:w-auto"
                   href="/privacy"
                   title="Privacy"
-                  >Privacy</a>
+                >
+                  Privacy
+                </a>
                 <a
                   className="w-full px-6 py-2 mr-0 text-gray-700 cursor-pointer md:px-3 md:mr-2 lg:mr-3 md:w-auto"
                   href="/terms"
                   title="Terms"
-                  >Terms</a>
+                >
+                  Terms
+                </a>
                 <span
                   className="w-full px-6 py-2 mr-0 text-gray-700 cursor-pointer md:px-3 md:mr-2 lg:mr-3 md:w-auto"
-                  onClick={() => {navigator.share({title: document.title,url: location.href})}}
-                  >Share</span
+                  onClick={() => { navigator.share({ title: document.title, url: location.href }) }}
+                >
+                  Share
+                </span
                 >
                 <a
                   href="https://github.com/ccbikai/DNS.Surf"
                   target="_blank"
+                  rel="noopener"
                   title="GitHub"
                   className="inline-flex items-center w-full px-5 px-6 py-3 text-sm font-medium leading-4 text-white bg-gray-900 md:w-auto md:rounded-full hover:bg-gray-800 focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-gray-800"
-                  >GitHub</a
+                >
+                  GitHub
+                </a
                 >
               </div>
             </div>
           </div>
           <div
-            className={cn("absolute flex flex-col items-center justify-center w-10 h-10 bg-white rounded-full cursor-pointer md:hidden hover:bg-gray-100", showMenu? "right-2": "right-0")}
-            onClick={() => {setShowMenu(!showMenu)}}
+            className={cn('absolute flex flex-col items-center justify-center w-10 h-10 bg-white rounded-full cursor-pointer md:hidden hover:bg-gray-100', showMenu ? 'right-2' : 'right-0')}
+            onClick={() => { setShowMenu(!showMenu) }}
           >
-            <span className={cn("w-6 h-6", showMenu ? "icon-[mdi--window-close]" : "icon-[mdi--dots-horizontal]")}></span>
+            <span className={cn('w-6 h-6', showMenu ? 'icon-[mdi--window-close]' : 'icon-[mdi--dots-horizontal]')}></span>
           </div>
         </div>
       </nav>

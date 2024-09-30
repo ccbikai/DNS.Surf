@@ -1,0 +1,2 @@
+CORS_ORIGIN="localhost"
+WORKER_HOST="localhost:8787"

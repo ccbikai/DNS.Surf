@@ -1,10 +1,10 @@
-"use client";
-import { useState, Suspense } from 'react'
+'use client'
+import { Suspense, useState } from 'react'
+import { DNSFeature } from './dns-feature'
 import { DNSForm } from './dns-form'
 import { DNSTable } from './dns-table'
-import { DNSFeature } from './dns-feature'
 
-const getNewURL = (query) => {
+function getNewURL(query) {
   const params = new URLSearchParams()
   params.append('name', query.name)
   params.append('type', query.type)
@@ -17,7 +17,7 @@ export default function DNSPanel() {
   const onSearch = (query) => {
     query.time = Date.now()
     setFormData(query)
-    history.replaceState({}, document.title, getNewURL(query));
+    history.replaceState({}, document.title, getNewURL(query))
   }
 
   return (
@@ -27,8 +27,8 @@ export default function DNSPanel() {
         <DNSForm onSearch={onSearch} />
       </Suspense>
       {
-        formData.name ? <DNSTable formData={formData} /> : <DNSFeature/>
+        formData.name ? <DNSTable formData={formData} /> : <DNSFeature />
       }
     </>
-  );
+  )
 }
