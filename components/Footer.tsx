@@ -26,7 +26,7 @@ export default function Footer() {
           className="mt-4 text-sm text-gray-500 sm:ml-4 sm:mt-0 sm:border-l sm:border-gray-200 sm:pl-4"
           href="https://html.zone"
           target="_blank"
-          rel="noreferrer noopener"
+          rel="noopener"
           title="HTML.ZONE"
         >
           &copy;
@@ -48,7 +48,7 @@ export default function Footer() {
           <a
             href="https://t.me/htmlzone"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener"
             title="Telegram"
             className="text-gray-400 hover:text-gray-500"
           >
@@ -58,7 +58,7 @@ export default function Footer() {
           <a
             href="https://mt.ci"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener"
             title="Blog"
             className="text-gray-400 hover:text-gray-500"
           >
@@ -69,7 +69,7 @@ export default function Footer() {
           <a
             href="https://x.com/0xKaiBi"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener"
             title="Twitter"
             className="text-gray-400 hover:text-gray-500"
           >
@@ -80,7 +80,7 @@ export default function Footer() {
           <a
             href="https://miantiao.me/@chi"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener"
             title="Mastodon"
             className="text-gray-400 hover:text-gray-500"
           >
@@ -91,7 +91,7 @@ export default function Footer() {
           <a
             href="https://github.com/ccbikai/DNS.Surf"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener"
             title="GitHub"
             className="text-gray-400 hover:text-gray-500"
           >

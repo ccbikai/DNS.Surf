@@ -45,7 +45,7 @@ export default function RootLayout({
       <body>
         {children}
         {
-          process.env.NODE_ENV === 'production'
+          (process.env.NODE_ENV === 'production' && !process.env.NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST)
             ? (
                 <>
                   <Script id="va-vaq">

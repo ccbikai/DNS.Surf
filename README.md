@@ -8,35 +8,68 @@ English | [简体中文](./README.zh-cn.md)
 
 ![DNS.Surf](./public/banner.png)
 
-## Principle
+## How It Works
 
-Vercel's Edge functions support custom deployment regions, and by querying DNS records through DoH, you can obtain the global resolution results of DNS.
+### Vercel
+
+Vercel's Edge Functions support custom deployment regions. By querying DNS records through DoH, we can obtain global DNS resolution results. Theoretically supports 18 countries or regions.
+
+### Cloudflare
+
+Cloudflare Workers are deployed globally. By accessing Workers in specific regions and using DoH to query DNS records, we can obtain global DNS resolution results. Theoretically supports 120+ countries and 330+ cities.
 
 ## Deployment
 
+Supports deployment to either Vercel or Cloudflare, independently.
+
+### Deploy to Vercel
+
 1. [Fork](https://github.com/ccbikai/DNS.Surf/fork) the project to your GitHub
 2. Create a new project on Vercel
-3. Choose the DNS.Surf project and the `Next.js` framework
+3. Select the DNS.Surf project and `Next.js` framework
 4. Save and deploy
-5. Bind a domain name (optional)
+5. Bind a domain (optional)
+
+### Deploy to Cloudflare
+
+1. [Fork](https://github.com/ccbikai/DNS.Surf/fork) the project to your GitHub
+2. Create a Worker locally using `npm run deploy`
+3. Link the Worker to GitHub in Cloudflare Dashboard and configure build environment variables
+4. Configure DNS resolution
+5. Create a new Pages project on Cloudflare
+6. Select the DNS.Surf project and `Next.js(static)` framework
+7. Set environment variables and deploy
+8. Bind a domain (optional)
 
 ## Development
 
-Frontend:
-
-```sh
-pnpm install
-pnpm run dev
-```
-
-Backend:
+### Vercel Version
 
 ```sh
 pnpm install
 pnpm run local
 ```
 
-## Sponsor
+### Cloudflare Version
 
-1. [Follow me on 𝕏](https://x.com/ccbikai)
+Backend:
+
+```sh
+cp .dev.vars.example dev.vars
+# ↑ Modify WORKER_HOST to your Worker's access domain for remote access
+pnpm install
+pnpm run worker
+```
+
+Frontend:
+
+```sh
+cp .env.example .env
+# ↑ Modify NEXT_PUBLIC_CLOUDFLARE_WORKER_HOST to your Worker's URL for remote access
+pnpm run dev
+```
+
+## Sponsorship
+
+1. [Follow me on 𝕏](https://x.com/0xKaiBi)
 2. [Sponsor me on GitHub](https://github.com/sponsors/ccbikai)

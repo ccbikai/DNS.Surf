@@ -24,6 +24,7 @@ export default antfu(
       'import/no-webpack-loader-syntax': 'off',
       'ts/no-namespace': 'off',
       'react-dom/no-dangerously-set-innerhtml': 'off',
+      'react-dom/no-unsafe-target-blank': 'off',
       'regexp/no-unused-capturing-group': 'off',
       'unicorn/prefer-node-protocol': 'off',
     },
