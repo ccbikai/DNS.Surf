@@ -1,5 +1,5 @@
 import Cloudflare from 'cloudflare'
-import { CLOUDFLARE_REGIONS } from '../config'
+import { CLOUDFLARE_REGIONS } from '../config/cloudflare'
 
 const WORKER_HOST = process.env.WORKER_HOST
 

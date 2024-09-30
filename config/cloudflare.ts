@@ -110,7 +110,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   sk1: {
     provider: 'cloudflare',
-    ip: '8.19.8.6',
+    ip: '8.47.69.6',
   },
   fr1: {
     provider: 'cloudflare',

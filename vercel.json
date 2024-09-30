@@ -10,7 +10,7 @@
     },
     {
       "source": "/FKYHsnzM/:match*",
-      "destination": "https://dns.surf/_vercel/insights/:match*"
+      "destination": "https://vercel.dns.surf/_vercel/insights/:match*"
     }
   ]
 }

@@ -2,7 +2,7 @@ import locations from './locations.json' with { type: 'json' }
 // locations: https://raw.githubusercontent.com/Netrvin/cloudflare-colo-list/refs/heads/main/locations.json
 import fs from 'node:fs'
 
-const displayNames = new Intl.DisplayNames(['en'], { type: 'region' })
+const displayNames = new Intl.DisplayNames(['en-US'], { type: 'region' })
 
 const COLOS = Object.values(locations)
   .reduce((acc, location) => {
