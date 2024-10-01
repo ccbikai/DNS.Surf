@@ -48,7 +48,7 @@ export default function Footer() {
                 <span
                   className="flex items-center justify-center w-8 h-8 text-white bg-gray-900 rounded-full"
                 >
-                  <span className="w-6 h-6 icon-[mdi--email-outline]"></span>
+                  <span className="w-6 h-6 icon-[mdi--dots-triangle]"></span>
                 </span>
                 <span className="mx-2">
                   DNS
