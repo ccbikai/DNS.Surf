@@ -2,11 +2,17 @@
 
 **查询 DNS 在全球各地的解析结果。**
 
+![DNS.Surf](./public/banner.png)
+
 ---
 
 [English](./README.md) | 简体中文
 
-![DNS.Surf](./public/banner.png)
+## 演示
+
+**Vercel** <https://vercel.dns.surf>
+
+**Cloudflare** <https://cloudflare.dns.surf>
 
 ## 原理
 
@@ -20,7 +26,7 @@ Clouflare 的 Worker 部署在全球，通过访问固定区域的 Worker 使用
 
 ## 部署
 
-可以支持部署到 Vercel 或者 Clouflare，互不影响。
+可以支持部署到 Vercel 或者 Cloudflare，互不影响。
 
 ### 部署到 Vercel
 

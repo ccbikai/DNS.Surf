@@ -2,11 +2,17 @@
 
 **Querying DNS Resolution Results in Different Regions Worldwide.**
 
+![DNS.Surf](./public/banner.png)
+
 ---
 
 English | [简体中文](./README.zh-cn.md)
 
-![DNS.Surf](./public/banner.png)
+## Demo
+
+**Vercel** <https://vercel.dns.surf>
+
+**Cloudflare** <https://cloudflare.dns.surf>
 
 ## How It Works
 
