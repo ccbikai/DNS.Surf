@@ -1,10 +1,16 @@
 import { ofetch } from 'ofetch'
 import { CLOUDFLARE_REGIONS } from '../config/cloudflare'
 
+const WORKER_HOST = process.env.WORKER_HOST
+
+if (!WORKER_HOST) {
+  throw new Error('WORKER_HOST environment variable is not set')
+}
+
 async function monitorRegion(region) {
   try {
     console.info(`Monitoring ${region}`)
-    const res = await ofetch.raw(`https://${process.env.WORKER_HOST}/api/region/global?dns=AAABAAABAAAAAAAAA2RucwRzdXJmAAABAAE&resolver=cloudflare&region=${region}&_=${Date.now()}`, {
+    const res = await ofetch.raw(`https://${WORKER_HOST}/api/region/global?dns=AAABAAABAAAAAAAAA2RucwRzdXJmAAABAAE&resolver=cloudflare&region=${region}&_=${Date.now()}`, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
         'Accept': 'application/dns-message',

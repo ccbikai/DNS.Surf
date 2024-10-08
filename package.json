@@ -14,7 +14,8 @@
     "deploy": "wrangler deploy",
     "postinstall": "node scripts/colo.mjs && simple-git-hooks || true",
     "cf-dns": "tsx --env-file=.env scripts/cf-dns.mjs",
-    "monitor": "tsx --env-file=.env scripts/monitor.mjs"
+    "monitor": "tsx scripts/monitor.mjs",
+    "dev:monitor": "tsx --env-file=.env scripts/monitor.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
