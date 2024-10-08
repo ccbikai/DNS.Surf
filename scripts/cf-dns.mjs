@@ -10,6 +10,10 @@ const cloudflare = new Cloudflare({
 async function updateDNS(existingRecords, dnsName, ip) {
   const existingRecord = existingRecords.find(record => record.name === dnsName)
   if (existingRecord) {
+    if (existingRecord.content === ip) {
+      console.info(`${dnsName} is pointed to ${ip}, skipping`)
+      return
+    }
     console.info(`updating ${dnsName} to ${ip}`)
     await cloudflare.dns.records.update(existingRecord.id, {
       zone_id: process.env.CLOUDFLARE_ZONE_ID,
