@@ -13,7 +13,8 @@
     "worker": "wrangler dev",
     "deploy": "wrangler deploy",
     "postinstall": "node scripts/colo.mjs && simple-git-hooks || true",
-    "cf-dns": "tsx --env-file=.env scripts/cf-dns.mjs"
+    "cf-dns": "tsx --env-file=.env scripts/cf-dns.mjs",
+    "monitor": "tsx --env-file=.env scripts/monitor.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
@@ -27,6 +28,7 @@
     "is-valid-domain": "^0.1.6",
     "lucide-react": "^0.299.0",
     "next": "^14.2.5",
+    "ofetch": "^1.4.0",
     "punycode": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -1,0 +1,30 @@
+name: Monitor Worker Regions
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: '22 22 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - run: pnpm run monitor
+        env:
+          WORKER_HOST: ${{ env.WORKER_HOST }}
