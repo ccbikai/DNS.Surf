@@ -28,4 +28,4 @@ jobs:
 
       - run: pnpm run monitor
         env:
-          WORKER_HOST: ${{ env.WORKER_HOST }}
+          WORKER_HOST: ${{ vars.WORKER_HOST }}
