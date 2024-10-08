@@ -27,3 +27,5 @@ jobs:
               args: [--frozen-lockfile, --strict-peer-dependencies]
 
       - run: pnpm run monitor
+        env:
+          WORKER_HOST: ${{ env.WORKER_HOST }}
