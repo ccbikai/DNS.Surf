@@ -46,6 +46,8 @@
     "@iconify-json/devicon": "^1.1.33",
     "@iconify-json/lucide": "^1.1.150",
     "@iconify-json/mdi": "^1.1.63",
+    "@iconify-json/mynaui": "^1.2.6",
+    "@iconify-json/oui": "^1.2.0",
     "@iconify-json/subway": "^1.1.10",
     "@iconify/tailwind": "^0.1.4",
     "@svgr/webpack": "^8.1.0",

@@ -26,19 +26,17 @@ function addLink(text) {
   const isIP = z.string().ip().safeParse(text).success
   if (isIP) {
     return (
-      <a href={`https://html.zone/ip/query?ip=${text}`} target="blank" rel="noopener">
+      <a href={`https://html.zone/ip/query?ip=${text}`} target="blank" rel="noopener" className="inline-flex items-center">
         {text}
-        {' '}
-        <span title="IP Info" className="bg-gray-100 text-gray-400 text-xs px-1 ml-1 w-5 inline-block text-center py-0.5 rounded-full">i</span>
+        <span title="IP Info" class="ml-1 w-4 h-4 icon-[oui--i-in-circle]"></span>
       </a>
     )
   }
   else if (isDomain(text)) {
     return (
-      <a href={`https://html.zone/whois/${text}`} target="blank" rel="noopener">
+      <a href={`https://html.zone/whois/${text}`} target="blank" rel="noopener" className="inline-flex items-center">
         {text}
-        {' '}
-        <span title="WHOIS" className="bg-gray-100 text-gray-400 text-xs px-1 ml-1 w-5 inline-block text-center py-0.5 rounded-full">w</span>
+        <span title="WHOIS" class="ml-1 w-4 h-4 icon-[mynaui--letter-w-circle]"></span>
       </a>
     )
     // return <span>{text}<a href={`https://html.zone/whois/${text}`} target="blank" rel="noopener" title="WHOIS" className="bg-gray-100 text-gray-500 text-xs px-1 ml-1 w-5 inline-block text-center py-0.5 rounded-full">w</a></span>
@@ -96,8 +94,7 @@ export function DNSResult({ formData, region, config }) {
         .toString('utf-8')
         .replace(/=/g, '')
       const dnsRes = await fetch(
-        `${dnsHost}/api/region/${region}?dns=${dnsQueryData}&resolver=${formData.resolver
-        }&region=${region}&_=${Math.random()}`,
+        `${dnsHost}/api/region/${region}?dns=${dnsQueryData}&resolver=${formData.resolver}&region=${region}&_=${Math.random()}`,
         {
           headers: {
             Accept: 'application/dns-message',

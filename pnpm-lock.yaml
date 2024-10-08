@@ -87,6 +87,12 @@ importers:
       '@iconify-json/mdi':
         specifier: ^1.1.63
         version: 1.1.63
+      '@iconify-json/mynaui':
+        specifier: ^1.2.6
+        version: 1.2.6
+      '@iconify-json/oui':
+        specifier: ^1.2.0
+        version: 1.2.0
       '@iconify-json/subway':
         specifier: ^1.1.10
         version: 1.1.10
@@ -1462,6 +1468,12 @@ packages:
 
   '@iconify-json/mdi@1.1.63':
     resolution: {integrity: sha512-b07dRM5LYdwJqd/lm+1+JDNDNSWHvpZ7ujb73oJxx3lmK1J0giDS0BSc4yia0hixNV0Z2q/4GyxAu/A8XqDnbg==}
+
+  '@iconify-json/mynaui@1.2.6':
+    resolution: {integrity: sha512-+OhCqZvqNu4y99F81+222GnKGlcOaH8E+kXUkjcSxa/v1dBob2kvEO/Icex7Y9x+hBtTKgE+rnqfKXiJVhsmlA==}
+
+  '@iconify-json/oui@1.2.0':
+    resolution: {integrity: sha512-MmbmbX947P7hTuauSRj1d+ii5vzwJoTh4VYGuGWepKoQOa4szxwPpuRGezNg07xAi5bZsptdloGwB5HBl/D00Q==}
 
   '@iconify-json/subway@1.1.10':
     resolution: {integrity: sha512-WRHL4ANhwdSh1FXYCOrwBSr9lhkrYhLhe3C0Fk8taRXG1J7l6KuObcqNqkFOX7UuSSicGWL9n4YMZF7V9tXsGw==}
@@ -7390,6 +7402,14 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/mdi@1.1.63':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mynaui@1.2.6':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/oui@1.2.0':
     dependencies:
       '@iconify/types': 2.0.0
 
