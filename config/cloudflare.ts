@@ -14,6 +14,23 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '104.28.43.38',
   },
+  cn2: {
+    provider: 'cloudflare',
+    ip: '104.28.66.15',
+  },
+  cn3: {
+    provider: 'cloudflare',
+    ip: '104.28.69.86',
+  },
+  cn4: {
+    provider: 'cloudflare',
+    ip: '104.28.101.64',
+  },
+  cn5: {
+    provider: 'cloudflare',
+    ip: '104.30.161.11',
+  },
+
   id1: {
     provider: 'cloudflare',
     ip: '8.18.195.6',
