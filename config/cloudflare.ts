@@ -10,6 +10,10 @@ export const CLOUDFLARE_REGIONS = {
   },
 
   // Asia
+  cn1: {
+    provider: 'cloudflare',
+    ip: '104.28.43.38',
+  },
   id1: {
     provider: 'cloudflare',
     ip: '8.18.195.6',
