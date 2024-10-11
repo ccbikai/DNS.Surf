@@ -1,5 +1,5 @@
 'use client'
-import { Suspense, useState } from 'react'
+import { useState } from 'react'
 import { DNSFeature } from './dns-feature'
 import { DNSForm } from './dns-form'
 import { DNSTable } from './dns-table'
@@ -23,9 +23,7 @@ export default function DNSPanel() {
   return (
     <>
       {/* <DNSHero/> */}
-      <Suspense>
-        <DNSForm onSearch={onSearch} />
-      </Suspense>
+      <DNSForm onSearch={onSearch} />
       {
         formData.name ? <DNSTable formData={formData} /> : <DNSFeature />
       }
