@@ -64,7 +64,10 @@ export function DNSForm({ onSearch }) {
     for (const key in values) {
       const searchParams = new URL(document.location).searchParams
       const queryValue = searchParams.get(key)
-      form.setValue(key, queryValue)
+
+      if (queryValue) {
+        form.setValue(key, queryValue)
+      }
     }
   })
 
