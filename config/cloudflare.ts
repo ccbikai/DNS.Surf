@@ -30,6 +30,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '162.158.113.66',
   },
+  mo1: {
+    provider: 'cloudflare',
+    ip: '172.69.72.87',
+  },
   in1: {
     provider: 'cloudflare',
     ip: '8.28.213.66',
@@ -44,7 +48,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   my1: {
     provider: 'cloudflare',
-    ip: '8.39.125.88',
+    ip: '8.39.125.69',
   },
   tw1: {
     provider: 'cloudflare',
@@ -212,7 +216,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   mx1: {
     provider: 'cloudflare',
-    ip: '8.46.113.66',
+    ip: '8.46.113.68',
   },
 
 }
