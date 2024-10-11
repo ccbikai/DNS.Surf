@@ -32,7 +32,7 @@ app.use('*', async (c, next) => {
   return corsMiddlewareHandler(c, next)
 })
 
-app.get('*', async (c) => {
+app.get('/api/region/*', async (c) => {
   const accept = c.req.header('accept') || ''
   const { search } = new URL(c.req.raw.url)
   const { resolver = defaultResolver, dns, region } = c.req.query()
@@ -47,7 +47,7 @@ app.get('*', async (c) => {
   const requestByWorkerProxy = regionConfig?.provider === 'cloudflare' && !requestFromWorker
 
   const dohServer = requestByWorkerProxy
-    ? ['worker', `https://${c.env.WORKER_HOST}/dns-query`]
+    ? ['worker', `https://${c.env.WORKER_HOST}/api/region/${region}`]
     : getResolver(resolver)
   const DNSapi = /application\/dns-message/.test(accept) && !requestByWorkerProxy
     ? `${dohServer[1]}?dns=${dns}`

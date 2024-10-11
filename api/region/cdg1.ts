@@ -1,4 +1,4 @@
-export { default } from '../dns-query'
+export { default } from '../dns'
 
 export const config = {
   runtime: 'edge',
