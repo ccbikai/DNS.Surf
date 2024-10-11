@@ -14,10 +14,10 @@ export function DNSTable({ formData }) {
     <>
       {formData.name
         ? (
-            <Table className="mt-8 mx-auto lg:w-11/12">
+            <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[240px]">Location</TableHead>
+                  <TableHead className="w-[240px]">LOCATION</TableHead>
                   <TableHead>ANSWERS</TableHead>
                   <TableHead className="w-[120px]">RCODE</TableHead>
                 </TableRow>

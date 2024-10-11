@@ -1,7 +1,10 @@
 'use client'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useState } from 'react'
 import { DNSFeature } from './dns-feature'
 import { DNSForm } from './dns-form'
+
+import { DNSMap } from './dns-map'
 import { DNSTable } from './dns-table'
 
 function getNewURL(query) {
@@ -14,6 +17,7 @@ function getNewURL(query) {
 
 export default function DNSPanel() {
   const [formData, setFormData] = useState({})
+
   const onSearch = (query) => {
     query.time = Date.now()
     setFormData(query)
@@ -24,8 +28,24 @@ export default function DNSPanel() {
     <>
       {/* <DNSHero/> */}
       <DNSForm onSearch={onSearch} />
+
       {
-        formData.name ? <DNSTable formData={formData} /> : <DNSFeature />
+        formData.name
+          ? (
+              <Tabs defaultValue="map" className="my-4 mx-auto lg:w-11/12">
+                <TabsList>
+                  <TabsTrigger value="map">Map</TabsTrigger>
+                  <TabsTrigger value="table">Table</TabsTrigger>
+                </TabsList>
+                <TabsContent value="map">
+                  <DNSMap formData={formData} />
+                </TabsContent>
+                <TabsContent value="table">
+                  <DNSTable formData={formData} />
+                </TabsContent>
+              </Tabs>
+            )
+          : <DNSFeature />
       }
     </>
   )

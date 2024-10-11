@@ -28,7 +28,7 @@ function addLink(text) {
     return (
       <a href={`https://html.zone/ip/query?ip=${text}`} target="blank" rel="noopener" className="inline-flex items-center">
         {text}
-        <span title="IP Info" class="ml-1 w-4 h-4 icon-[oui--i-in-circle]"></span>
+        <span title="IP Info" className="ml-1 w-4 h-4 icon-[oui--i-in-circle]"></span>
       </a>
     )
   }
@@ -36,7 +36,7 @@ function addLink(text) {
     return (
       <a href={`https://html.zone/whois/${text}`} target="blank" rel="noopener" className="inline-flex items-center">
         {text}
-        <span title="WHOIS" class="ml-1 w-4 h-4 icon-[mynaui--letter-w-circle]"></span>
+        <span title="WHOIS" className="ml-1 w-4 h-4 icon-[mynaui--letter-w-circle]"></span>
       </a>
     )
     // return <span>{text}<a href={`https://html.zone/whois/${text}`} target="blank" rel="noopener" title="WHOIS" className="bg-gray-100 text-gray-500 text-xs px-1 ml-1 w-5 inline-block text-center py-0.5 rounded-full">w</a></span>
@@ -144,7 +144,7 @@ export function DNSResult({ formData, region, config }) {
   })
 
   return (
-    <TableRow key={region} ref={ref}>
+    <TableRow ref={ref}>
       {isSameQuery(result, formData)
         ? (
             <>
@@ -155,7 +155,7 @@ export function DNSResult({ formData, region, config }) {
                 {Array.isArray(result.answers)
                   ? result.answers.map((answer) => {
                     return (
-                      <div key={answer}>
+                      <div key={answer?.data || answer}>
                         <span className="text-sm mr-2">
                           {' '}
                           <FormatAnswer answer={answer} />
