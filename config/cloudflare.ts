@@ -182,10 +182,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '8.35.58.23',
   },
-  ng1: {
-    provider: 'cloudflare',
-    ip: '8.35.57.22',
-  },
+  // ng1: {
+  //   provider: 'cloudflare',
+  //   ip: '8.35.57.22',
+  // },
 
   // South America
   pe1: {
