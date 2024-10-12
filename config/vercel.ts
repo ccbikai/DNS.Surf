@@ -1,74 +1,74 @@
 export const VERCEL_REGIONS = {
   hkg1: {
-    flag: '🇭🇰',
+    countryCode: 'HK',
     location: 'Hong Kong',
   },
   hnd1: {
-    flag: '🇯🇵',
+    countryCode: 'JP',
     location: 'Tokyo, Japan',
   },
   kix1: {
-    flag: '🇯🇵',
+    countryCode: 'JP',
     location: 'Osaka, Japan',
   },
   icn1: {
-    flag: '🇰🇷',
+    countryCode: 'KR',
     location: 'Seoul, South Korea',
   },
   sin1: {
-    flag: '🇸🇬',
+    countryCode: 'SG',
     location: 'Singapore',
   },
   bom1: {
-    flag: '🇮🇳',
+    countryCode: 'IN',
     location: 'Mumbai, India',
   },
   syd1: {
-    flag: '🇦🇺',
+    countryCode: 'AU',
     location: 'Sydney, Australia',
   },
   cpt1: {
-    flag: '🇿🇦',
+    countryCode: 'ZA',
     location: 'Cape Town, South Africa',
   },
   cdg1: {
-    flag: '🇫🇷',
+    countryCode: 'FR',
     location: 'Paris, France',
   },
   arn1: {
-    flag: '🇸🇪',
+    countryCode: 'SE',
     location: 'Stockholm, Sweden',
   },
   dub1: {
-    flag: '🇮🇪',
+    countryCode: 'IE',
     location: 'Dublin, Ireland',
   },
   lhr1: {
-    flag: '🇬🇧',
+    countryCode: 'GB',
     location: 'London, United Kingdom',
   },
   fra1: {
-    flag: '🇩🇪',
+    countryCode: 'DE',
     location: 'Frankfurt, Germany',
   },
   iad1: {
-    flag: '🇺🇸',
+    countryCode: 'US',
     location: 'Washington, D.C., United States',
   },
   sfo1: {
-    flag: '🇺🇸',
+    countryCode: 'US',
     location: 'San Francisco, United States',
   },
   pdx1: {
-    flag: '🇺🇸',
+    countryCode: 'US',
     location: 'Portland, United States',
   },
   cle1: {
-    flag: '🇺🇸',
+    countryCode: 'US',
     location: 'Cleveland, United States',
   },
   gru1: {
-    flag: '🇧🇷',
+    countryCode: 'BR',
     location: 'São Paulo, Brazil',
   },
 }

@@ -32,7 +32,7 @@ export default function DNSPanel() {
       {
         formData.name
           ? (
-              <Tabs defaultValue="map" className="my-4 mx-auto lg:w-11/12">
+              <Tabs defaultValue="map" className="my-4 mx-auto lg:w-11/12 space-y-8">
                 <TabsList>
                   <TabsTrigger value="map">Map</TabsTrigger>
                   <TabsTrigger value="table">Table</TabsTrigger>
