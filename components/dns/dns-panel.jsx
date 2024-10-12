@@ -37,7 +37,7 @@ export default function DNSPanel() {
                   <TabsTrigger value="map">Map</TabsTrigger>
                   <TabsTrigger value="table">Table</TabsTrigger>
                 </TabsList>
-                <TabsContent value="map">
+                <TabsContent value="map" className="[&_>div]:outline-none">
                   <DNSMap formData={formData} />
                 </TabsContent>
                 <TabsContent value="table">
