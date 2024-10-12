@@ -1,8 +1,8 @@
-name: Monitor Worker Regions
+name: Worker Regions Monitor
 
 on:
-  push:
-    branches: [master]
+  # push:
+  #   branches: [master]
   schedule:
     - cron: '22 22 * * *'
   workflow_dispatch:
