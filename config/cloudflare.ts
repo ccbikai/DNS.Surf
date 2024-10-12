@@ -176,6 +176,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '8.42.52.6',
   },
+  ru1: {
+    provider: 'cloudflare',
+    ip: '8.21.110.22',
+  },
 
   // Africa
   za1: {
