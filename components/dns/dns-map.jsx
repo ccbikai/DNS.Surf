@@ -27,7 +27,7 @@ export function DNSMap({ formData }) {
   const tooltipDom = document.createElement('div')
   const tooltipRoot = createRoot(tooltipDom)
 
-  const refreshTooltip = (event) => {
+  const refreshTooltip = (event, data) => {
     if (!currentOrigin) {
       tooltip?.hide()
       return
@@ -37,6 +37,7 @@ export function DNSMap({ formData }) {
         key={currentOrigin.region}
         region={currentOrigin.region}
         config={currentOrigin.config}
+        regionId={data?.id}
         formData={formData}
       />,
     )
@@ -52,12 +53,12 @@ export function DNSMap({ formData }) {
 
         if (currentOrigin?.id === data.id) {
           console.info('same area', data)
-          return refreshTooltip(event)
+          return refreshTooltip(event, data)
         }
 
         console.info('change area', data)
         currentOrigin = data
-        refreshTooltip(event)
+        refreshTooltip(event, data)
       },
     },
     [VisTopoJSONMapSelectors.background]: {

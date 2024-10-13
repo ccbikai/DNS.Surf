@@ -26,6 +26,7 @@
     "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.1",
+    "@uidotdev/usehooks": "^2.4.1",
     "@unovis/react": "1.4.3-beta.0",
     "@unovis/ts": "1.4.3-beta.0",
     "buffer": "^6.0.3",

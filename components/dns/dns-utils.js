@@ -66,13 +66,16 @@ export async function getDNSAnswer(formData, region, config) {
   console.info('dnsRecords', dnsRecords)
 
   let regionInfo = null
+  let countryCode = null
   if (isCloudflare) {
     const cloudflareRegionInfo = dnsRes.headers.get('X-Country')
     const cloudflareLocationInfo = dnsRes.headers.get('X-Location')
     regionInfo = `${getFlag(cloudflareRegionInfo) || ''} ${cloudflareLocationInfo || ''}`
+    countryCode = cloudflareRegionInfo
   }
   else {
     regionInfo = `${getFlag(config.countryCode) || ''} ${config.location || ''}`
+    countryCode = config.countryCode
   }
 
   return {
@@ -80,5 +83,6 @@ export async function getDNSAnswer(formData, region, config) {
     dnsRecords,
     answers,
     regionInfo,
+    countryCode,
   }
 }

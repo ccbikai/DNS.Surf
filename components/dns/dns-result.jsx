@@ -1,7 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Skeleton } from '@/components/ui/skeleton'
 import { TableCell, TableRow } from '@/components/ui/table'
-
 import { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import DNSAnswer from './dns-answer.jsx'

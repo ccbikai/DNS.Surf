@@ -1,12 +1,5 @@
-import {
-  Table,
-  TableBody,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+import { Table, TableBody, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { REGIONS } from '@/config'
-
 import { DNSResult } from './dns-result'
 
 export function DNSTable({ formData }) {

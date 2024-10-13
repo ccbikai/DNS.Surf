@@ -1,9 +1,9 @@
 'use client'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useMediaQuery } from '@uidotdev/usehooks'
 import { useState } from 'react'
 import { DNSFeature } from './dns-feature'
 import { DNSForm } from './dns-form'
-
 import { DNSMap } from './dns-map'
 import { DNSTable } from './dns-table'
 
@@ -17,6 +17,8 @@ function getNewURL(query) {
 
 export default function DNSPanel() {
   const [formData, setFormData] = useState({})
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  const defaultTab = isMobile ? 'table' : 'map'
 
   const onSearch = (query) => {
     query.time = Date.now()
@@ -32,7 +34,7 @@ export default function DNSPanel() {
       {
         formData.name
           ? (
-              <Tabs defaultValue="map" className="my-4 mx-auto lg:w-11/12 space-y-8">
+              <Tabs defaultValue={defaultTab} className="my-4 mx-auto lg:w-11/12 space-y-8">
                 <TabsList>
                   <TabsTrigger value="map">Map</TabsTrigger>
                   <TabsTrigger value="table">Table</TabsTrigger>

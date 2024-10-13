@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import DNSAnswer from './dns-answer.jsx'
 import { getDNSAnswer, isSameQuery } from './dns-utils.js'
 
-export function DNSTooltip({ formData, region, config }) {
+export function DNSTooltip({ formData, region, config, regionId }) {
   const [result, setResult] = useState({})
   const [regionInfo, setRegionInfo] = useState(null)
 
@@ -12,13 +12,16 @@ export function DNSTooltip({ formData, region, config }) {
     setRegionInfo(null)
     setResult({})
     try {
-      const { regionInfo, dnsRecords, answers } = await getDNSAnswer(formData, region, config)
-      setRegionInfo(regionInfo)
-      setResult({
-        ...formData,
-        rcode: dnsRecords.rcode,
-        answers,
-      })
+      const { regionInfo, countryCode, dnsRecords, answers } = await getDNSAnswer(formData, region, config)
+
+      if (countryCode === regionId) {
+        setRegionInfo(regionInfo)
+        setResult({
+          ...formData,
+          rcode: dnsRecords.rcode,
+          answers,
+        })
+      }
     }
     catch (error) {
       console.error(error)
@@ -47,9 +50,9 @@ export function DNSTooltip({ formData, region, config }) {
           ? <div className="text-base">{result.error}</div>
           : (
               <div className="space-y-2">
-                <Skeleton className="h-5 w-20" />
-                <Skeleton className="h-5 w-40" />
-                <Skeleton className="h-5 w-20" />
+                <Skeleton className="h-5 w-32" />
+                <Skeleton className="h-5 w-48" />
+                <Skeleton className="h-5 w-32" />
               </div>
             )
       )
