@@ -1,85 +1,26 @@
-import { Badge } from '@/components/ui/badge'
-import { Skeleton } from '@/components/ui/skeleton'
-import { TableCell, TableRow } from '@/components/ui/table'
-import { useState } from 'react'
-import { useInView } from 'react-intersection-observer'
-import DNSAnswer from './dns-answer.jsx'
-import { getDNSAnswer, isSameQuery } from './dns-utils.js'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useMediaQuery } from '@uidotdev/usehooks'
+import dynamic from 'next/dynamic'
 
-export function DNSResult({ formData, region, config }) {
-  const [result, setResult] = useState({})
-  const [regionInfo, setRegionInfo] = useState(null)
+const DNSResultMap = dynamic(() => import('./dns-result-map'), { ssr: false })
+const DNSResultTable = dynamic(() => import('./dns-result-table'), { ssr: false })
 
-  const dnsQuery = async () => {
-    setRegionInfo(null)
-    setResult({})
-    try {
-      const { regionInfo, dnsRecords, answers } = await getDNSAnswer(formData, region, config)
-
-      setRegionInfo(regionInfo)
-      setResult({
-        ...formData,
-        rcode: dnsRecords.rcode,
-        answers,
-      })
-    }
-    catch (error) {
-      console.error(error)
-      setResult({
-        error: error.message,
-      })
-    }
-  }
-
-  const { ref } = useInView({
-    threshold: 0,
-    triggerOnce: true,
-    onChange: (inView) => {
-      if (inView && !result.time) {
-        dnsQuery()
-      }
-    },
-  })
+export default function DNSResult({ formData }) {
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  const defaultTab = isMobile ? 'table' : 'map'
 
   return (
-    <TableRow ref={ref}>
-      {isSameQuery(result, formData)
-        ? (
-            <>
-              <TableCell className="font-medium">
-                {regionInfo}
-              </TableCell>
-              <TableCell>
-                <DNSAnswer result={result} />
-              </TableCell>
-              <TableCell>
-                <Badge
-                  variant={result.rcode === 'NOERROR' ? 'default' : 'destructive'}
-                >
-                  {result.rcode}
-                </Badge>
-              </TableCell>
-            </>
-          )
-        : (result.error
-            ? (
-                <TableCell>
-                  {result.error}
-                </TableCell>
-              )
-            : (
-                <>
-                  <TableCell>
-                    <Skeleton className="h-5 w-full" />
-                  </TableCell>
-                  <TableCell>
-                    <Skeleton className="h-5 w-full" />
-                  </TableCell>
-                  <TableCell>
-                    <Skeleton className="h-5 w-full" />
-                  </TableCell>
-                </>
-              ))}
-    </TableRow>
+    <Tabs defaultValue={defaultTab} className="my-4 mx-auto lg:w-11/12 space-y-8">
+      <TabsList>
+        <TabsTrigger value="map">Map</TabsTrigger>
+        <TabsTrigger value="table">Table</TabsTrigger>
+      </TabsList>
+      <TabsContent value="map" className="[&_>div]:outline-none">
+        <DNSResultMap formData={formData} />
+      </TabsContent>
+      <TabsContent value="table">
+        <DNSResultTable formData={formData} />
+      </TabsContent>
+    </Tabs>
   )
 }

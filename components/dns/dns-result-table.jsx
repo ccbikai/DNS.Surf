@@ -1,8 +1,8 @@
 import { Table, TableBody, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { REGIONS } from '@/config'
-import { DNSResult } from './dns-result'
+import { DNSResultTableRow } from './dns-result-table-row'
 
-export function DNSTable({ formData }) {
+export default function DNSTable({ formData }) {
   return (
     <>
       {formData.name
@@ -17,7 +17,7 @@ export function DNSTable({ formData }) {
               </TableHeader>
               <TableBody>
                 {Object.keys(REGIONS).map(region => (
-                  <DNSResult
+                  <DNSResultTableRow
                     key={`${region}-${formData.time}`}
                     formData={formData}
                     region={region}

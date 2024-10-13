@@ -15,7 +15,7 @@ const areas = Object.entries(REGIONS).map(([id, regionConfig]) => {
   }
 })
 
-export function DNSMap({ formData }) {
+export default function DNSResultMap({ formData }) {
   let currentOrigin = null
 
   const tooltip = new Tooltip({
