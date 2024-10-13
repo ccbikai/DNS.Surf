@@ -1,8 +1,10 @@
 'use client'
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { DNSFeature } from './dns-feature'
 import { DNSForm } from './dns-form'
-import { DNSTable } from './dns-table'
+
+const DNSResult = dynamic(() => import('./dns-result'), { ssr: false })
 
 function getNewURL(query) {
   const params = new URLSearchParams()
@@ -14,6 +16,7 @@ function getNewURL(query) {
 
 export default function DNSPanel() {
   const [formData, setFormData] = useState({})
+
   const onSearch = (query) => {
     query.time = Date.now()
     setFormData(query)
@@ -24,8 +27,11 @@ export default function DNSPanel() {
     <>
       {/* <DNSHero/> */}
       <DNSForm onSearch={onSearch} />
+
       {
-        formData.name ? <DNSTable formData={formData} /> : <DNSFeature />
+        formData.name
+          ? <DNSResult formData={formData} />
+          : <DNSFeature />
       }
     </>
   )

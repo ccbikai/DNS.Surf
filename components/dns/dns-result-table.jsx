@@ -1,30 +1,23 @@
-import {
-  Table,
-  TableBody,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+import { Table, TableBody, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { REGIONS } from '@/config'
+import { DNSResultTableRow } from './dns-result-table-row'
 
-import { DNSResult } from './dns-result'
-
-export function DNSTable({ formData }) {
+export default function DNSTable({ formData }) {
   return (
     <>
       {formData.name
         ? (
-            <Table className="mt-8 mx-auto lg:w-11/12">
+            <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[240px]">Location</TableHead>
+                  <TableHead className="w-[240px]">LOCATION</TableHead>
                   <TableHead>ANSWERS</TableHead>
                   <TableHead className="w-[120px]">RCODE</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {Object.keys(REGIONS).map(region => (
-                  <DNSResult
+                  <DNSResultTableRow
                     key={`${region}-${formData.time}`}
                     formData={formData}
                     region={region}

@@ -10,7 +10,7 @@
     },
     "resolveJsonModule": true,
     "allowJs": true,
-    "strict": true,
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "isolatedModules": true,
