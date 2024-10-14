@@ -1,5 +1,19 @@
+import { parseArgs } from 'node:util'
 import { ofetch } from 'ofetch'
+import { ProxyAgent, setGlobalDispatcher } from 'undici'
 import { CLOUDFLARE_REGIONS } from '../config/cloudflare'
+
+if (process.env.http_proxy) {
+  setGlobalDispatcher(new ProxyAgent(process.env.http_proxy))
+}
+
+const { values: args = {} } = parseArgs({
+  options: {
+    regions: {
+      type: 'string',
+    },
+  },
+})
 
 const WORKER_HOST = process.env.WORKER_HOST
 
@@ -50,7 +64,8 @@ async function monitorRegion(region) {
 async function main() {
   console.info('Starting monitor')
   const unavailableRegions = []
-  for (const region of Object.keys(CLOUDFLARE_REGIONS)) {
+  const regions = args.regions ? args.regions.split(',') : Object.keys(CLOUDFLARE_REGIONS)
+  for (const region of regions) {
     const res = await monitorRegion(region)
     if (res.status === 'error') {
       unavailableRegions.push(res)
@@ -58,7 +73,7 @@ async function main() {
   }
   console.info('Monitor finished')
   if (unavailableRegions.length > 0) {
-    console.error('Unavailable regions:', unavailableRegions)
+    console.error('Unavailable regions:', unavailableRegions.map(region => region.region).join(','), unavailableRegions)
     process.exit(1)
   }
 }
