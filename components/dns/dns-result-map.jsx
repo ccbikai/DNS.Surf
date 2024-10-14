@@ -1,5 +1,6 @@
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { REGIONS } from '@/config'
+import { useClickAway } from '@uidotdev/usehooks'
 import { VisSingleContainer, VisTopoJSONMap, VisTopoJSONMapSelectors } from '@unovis/react'
 import { Tooltip } from '@unovis/ts'
 import { WorldMapTopoJSON } from '@unovis/ts/maps'
@@ -21,11 +22,15 @@ export default function DNSResultMap({ formData }) {
   const tooltip = new Tooltip({
     container: document.body,
     attributes: {
-      style: 'pointer-events: auto',
+      style: 'pointer-events: auto;z-index: 40;',
     },
   })
   const tooltipDom = document.createElement('div')
   const tooltipRoot = createRoot(tooltipDom)
+
+  const ref = useClickAway(() => {
+    tooltip?.hide()
+  })
 
   const refreshTooltip = (event, data) => {
     if (!currentOrigin) {
@@ -77,7 +82,7 @@ export default function DNSResultMap({ formData }) {
   }, [formData])
 
   return (
-    <AspectRatio ratio={65 / 30}>
+    <AspectRatio ratio={65 / 30} ref={ref}>
       <VisSingleContainer key={formData.time} data={{ areas }} className="h-full">
         <VisTopoJSONMap topojson={WorldMapTopoJSON} events={events} />
       </VisSingleContainer>
