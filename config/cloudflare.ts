@@ -1,42 +1,25 @@
+// Cloudflare regions
+// https://api.cloudflare.com/local-ip-ranges.csv
 export const CLOUDFLARE_REGIONS = {
-  // Oceania
-  au1: {
+  fj1: {
     provider: 'cloudflare',
-    ip: '8.24.243.2',
+    ip: '172.68.145.133',
   },
   nz1: {
     provider: 'cloudflare',
     ip: '8.39.204.6',
   },
-
-  // Asia
-  id1: {
+  nc1: {
     provider: 'cloudflare',
-    ip: '8.18.195.6',
+    ip: '172.69.47.80',
   },
-  sg1: {
+  au1: {
     provider: 'cloudflare',
-    ip: '8.25.96.66',
+    ip: '8.24.243.2',
   },
-  tr1: {
+  gu1: {
     provider: 'cloudflare',
-    ip: '8.39.214.56',
-  },
-  // bt1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.69.219.130',
-  // },
-  hk1: {
-    provider: 'cloudflare',
-    ip: '162.158.113.66',
-  },
-  mo1: {
-    provider: 'cloudflare',
-    ip: '172.69.72.87',
-  },
-  in1: {
-    provider: 'cloudflare',
-    ip: '8.28.213.66',
+    ip: '172.69.197.69',
   },
   jp1: {
     provider: 'cloudflare',
@@ -46,83 +29,261 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '8.38.149.88',
   },
-  my1: {
+  ph1: {
     provider: 'cloudflare',
-    ip: '8.39.125.69',
+    ip: '162.158.136.188',
   },
   tw1: {
     provider: 'cloudflare',
     ip: '8.39.126.66',
   },
-
-  // Europe
+  id1: {
+    provider: 'cloudflare',
+    ip: '8.18.195.6',
+  },
+  bn1: {
+    provider: 'cloudflare',
+    ip: '172.69.217.77',
+  },
+  hk1: {
+    provider: 'cloudflare',
+    ip: '162.158.113.66',
+  },
+  mo1: {
+    provider: 'cloudflare',
+    ip: '172.69.72.87',
+  },
+  vn1: {
+    provider: 'cloudflare',
+    ip: '172.68.165.130',
+  },
+  mn1: {
+    provider: 'cloudflare',
+    ip: '172.68.93.133',
+  },
+  kh1: {
+    provider: 'cloudflare',
+    ip: '172.68.201.133',
+  },
+  sg1: {
+    provider: 'cloudflare',
+    ip: '8.25.96.66',
+  },
+  my1: {
+    provider: 'cloudflare',
+    ip: '8.39.125.69',
+  },
+  la1: {
+    provider: 'cloudflare',
+    ip: '172.69.227.166',
+  },
+  th1: {
+    provider: 'cloudflare',
+    ip: '162.158.204.80',
+  },
+  // mm1: {
+  //   provider: 'cloudflare',
+  //   ip: '162.158.215.69',
+  // },
+  ru1: {
+    provider: 'cloudflare',
+    ip: '8.21.110.22',
+  },
+  bd1: {
+    provider: 'cloudflare',
+    ip: '162.158.9.130',
+  },
+  bt1: {
+    provider: 'cloudflare',
+    ip: '172.69.219.130',
+  },
+  in1: {
+    provider: 'cloudflare',
+    ip: '8.28.213.66',
+  },
+  np1: {
+    provider: 'cloudflare',
+    ip: '172.68.203.73',
+  },
+  lk1: {
+    provider: 'cloudflare',
+    ip: '104.29.15.3',
+  },
+  kz1: {
+    provider: 'cloudflare',
+    ip: '172.68.207.166',
+  },
+  // pk1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.69.38.17',
+  // },
+  mv1: {
+    provider: 'cloudflare',
+    ip: '162.158.143.77',
+  },
+  // uz1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.71.1.17',
+  // },
+  om1: {
+    provider: 'cloudflare',
+    ip: '162.158.28.77',
+  },
+  mu1: {
+    provider: 'cloudflare',
+    ip: '172.69.92.133',
+  },
+  re1: {
+    provider: 'cloudflare',
+    ip: '162.158.206.80',
+  },
+  ae1: {
+    provider: 'cloudflare',
+    ip: '162.158.56.70',
+  },
+  qa1: {
+    provider: 'cloudflare',
+    ip: '162.158.8.132',
+  },
+  bh1: {
+    provider: 'cloudflare',
+    ip: '172.69.228.133',
+  },
+  az1: {
+    provider: 'cloudflare',
+    ip: '172.71.12.82',
+  },
+  sa1: {
+    provider: 'cloudflare',
+    ip: '172.68.97.77',
+  },
+  kw1: {
+    provider: 'cloudflare',
+    ip: '162.158.12.86',
+  },
+  iq1: {
+    provider: 'cloudflare',
+    ip: '162.158.83.70',
+  },
+  mg1: {
+    provider: 'cloudflare',
+    ip: '172.69.161.77',
+  },
+  ge1: {
+    provider: 'cloudflare',
+    ip: '162.158.151.77',
+  },
+  am1: {
+    provider: 'cloudflare',
+    ip: '172.68.95.77',
+  },
+  dj1: {
+    provider: 'cloudflare',
+    ip: '172.68.128.166',
+  },
+  ke1: {
+    provider: 'cloudflare',
+    ip: '162.158.40.77',
+  },
+  tz1: {
+    provider: 'cloudflare',
+    ip: '172.68.37.130',
+  },
+  jo1: {
+    provider: 'cloudflare',
+    ip: '172.69.36.130',
+  },
+  lb1: {
+    provider: 'cloudflare',
+    ip: '172.69.84.133',
+  },
+  ps1: {
+    provider: 'cloudflare',
+    ip: '162.158.80.160',
+  },
+  il1: {
+    provider: 'cloudflare',
+    ip: '162.158.254.130',
+  },
+  cy1: {
+    provider: 'cloudflare',
+    ip: '172.68.45.130',
+  },
+  ug1: {
+    provider: 'cloudflare',
+    ip: '172.69.5.133',
+  },
+  // mz1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.68.31.17',
+  // },
+  eg1: {
+    provider: 'cloudflare',
+    ip: '172.69.126.77',
+  },
+  za1: {
+    provider: 'cloudflare',
+    ip: '172.68.42.188',
+  },
+  zw1: {
+    provider: 'cloudflare',
+    ip: '172.68.90.130',
+  },
+  ua1: {
+    provider: 'cloudflare',
+    ip: '8.42.51.6',
+  },
+  rw1: {
+    provider: 'cloudflare',
+    ip: '172.69.254.133',
+  },
+  md1: {
+    provider: 'cloudflare',
+    ip: '8.39.206.16',
+  },
+  tr1: {
+    provider: 'cloudflare',
+    ip: '8.39.214.56',
+  },
+  by1: {
+    provider: 'cloudflare',
+    ip: '172.70.180.138',
+  },
+  // ro1: {
+  //   provider: 'cloudflare',
+  //   ip: '162.158.16.6',
+  // },
+  // bw1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.68.66.68',
+  // },
+  // lt1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.69.52.68',
+  // },
+  // fi1: {
+  //   provider: 'cloudflare',
+  //   ip: '162.158.236.3',
+  // },
   ee1: {
     provider: 'cloudflare',
-    ip: '8.39.205.6',
-  },
-  gr1: {
-    provider: 'cloudflare',
-    ip: '8.17.205.11',
-  },
-  ie1: {
-    provider: 'cloudflare',
-    ip: '8.18.194.11',
-  },
-  it1: {
-    provider: 'cloudflare',
-    ip: '8.21.9.6',
-  },
-  ro1: {
-    provider: 'cloudflare',
-    ip: '162.158.19.66',
-  },
-  se1: {
-    provider: 'cloudflare',
-    ip: '8.40.140.6',
-  },
-  be1: {
-    provider: 'cloudflare',
-    ip: '8.44.2.66',
-  },
-  de1: {
-    provider: 'cloudflare',
-    ip: '8.43.121.11',
-  },
-  gb1: {
-    provider: 'cloudflare',
-    ip: '8.42.172.66',
-  },
-  hr1: {
-    provider: 'cloudflare',
-    ip: '8.39.6.6',
-  },
-  hu1: {
-    provider: 'cloudflare',
-    ip: '8.43.225.66',
-  },
-  dk1: {
-    provider: 'cloudflare',
-    ip: '8.43.224.111',
+    ip: '172.69.136.70',
   },
   lv1: {
     provider: 'cloudflare',
     ip: '8.40.29.22',
   },
-  nl1: {
+  gr1: {
     provider: 'cloudflare',
-    ip: '8.19.8.66',
+    ip: '8.17.205.11',
   },
-  sk1: {
+  bg1: {
     provider: 'cloudflare',
-    ip: '8.47.69.6',
+    ip: '8.40.26.50',
   },
-  fr1: {
+  mk1: {
     provider: 'cloudflare',
-    ip: '8.36.219.66',
-  },
-  lu1: {
-    provider: 'cloudflare',
-    ip: '8.42.164.22',
+    ip: '172.68.251.130',
   },
   pl1: {
     provider: 'cloudflare',
@@ -132,95 +293,224 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '8.44.1.30',
   },
+  al1: {
+    provider: 'cloudflare',
+    ip: '172.71.138.130',
+  },
+  hu1: {
+    provider: 'cloudflare',
+    ip: '8.43.225.66',
+  },
+  se1: {
+    provider: 'cloudflare',
+    ip: '8.40.140.6',
+  },
+  sk1: {
+    provider: 'cloudflare',
+    ip: '8.47.69.6',
+  },
+  na1: {
+    provider: 'cloudflare',
+    ip: '162.158.35.130',
+  },
   at1: {
     provider: 'cloudflare',
     ip: '8.40.111.66',
   },
-  is1: {
+  hr1: {
     provider: 'cloudflare',
-    ip: '8.39.213.22',
+    ip: '8.39.6.6',
   },
-  pt1: {
+  // cd1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.69.104.75',
+  // },
+  cz1: {
     provider: 'cloudflare',
-    ip: '8.42.245.88',
+    ip: '8.40.30.6',
+  },
+  it1: {
+    provider: 'cloudflare',
+    ip: '8.21.9.6',
+  },
+  de1: {
+    provider: 'cloudflare',
+    ip: '8.43.121.11',
+  },
+  ao1: {
+    provider: 'cloudflare',
+    ip: '162.158.252.130',
+  },
+  dk1: {
+    provider: 'cloudflare',
+    ip: '8.43.224.111',
   },
   no1: {
     provider: 'cloudflare',
     ip: '8.41.36.66',
   },
-  lt1: {
+  tn1: {
     provider: 'cloudflare',
-    ip: '172.69.188.166',
+    ip: '162.158.149.138',
   },
-  bg1: {
+  ch1: {
     provider: 'cloudflare',
-    ip: '8.40.26.50',
+    ip: '172.69.108.70',
   },
-  md1: {
+  dz1: {
     provider: 'cloudflare',
-    ip: '8.39.206.16',
+    ip: '162.158.45.88',
   },
-  ua1: {
+  lu1: {
     provider: 'cloudflare',
-    ip: '8.42.51.6',
+    ip: '8.42.164.22',
   },
-  cz1: {
+  fr1: {
     provider: 'cloudflare',
-    ip: '8.40.30.6',
+    ip: '8.36.219.66',
+  },
+  nl1: {
+    provider: 'cloudflare',
+    ip: '8.19.8.66',
+  },
+  be1: {
+    provider: 'cloudflare',
+    ip: '8.44.2.66',
+  },
+  ng1: {
+    provider: 'cloudflare',
+    ip: '8.35.57.22',
   },
   es1: {
     provider: 'cloudflare',
     ip: '8.44.3.44',
   },
-  fi1: {
+  gh1: {
     provider: 'cloudflare',
-    ip: '8.42.52.6',
+    ip: '172.70.190.80',
   },
-  ru1: {
+  gb1: {
     provider: 'cloudflare',
-    ip: '8.21.110.22',
+    ip: '8.42.172.66',
   },
-
-  // Africa
-  za1: {
+  bf1: {
     provider: 'cloudflare',
-    ip: '8.35.58.23',
+    ip: '172.71.3.130',
   },
-  // ng1: {
-  //   provider: 'cloudflare',
-  //   ip: '8.35.57.22',
-  // },
-
-  // South America
-  pe1: {
+  ci1: {
     provider: 'cloudflare',
-    ip: '8.36.220.66',
+    ip: '172.68.13.130',
+  },
+  ie1: {
+    provider: 'cloudflare',
+    ip: '8.18.194.11',
+  },
+  pt1: {
+    provider: 'cloudflare',
+    ip: '8.42.245.88',
+  },
+  sn1: {
+    provider: 'cloudflare',
+    ip: '172.69.15.80',
+  },
+  is1: {
+    provider: 'cloudflare',
+    ip: '172.69.144.88',
   },
   br1: {
     provider: 'cloudflare',
     ip: '8.18.113.166',
   },
+  // sr1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.68.131.133',
+  // },
+  py1: {
+    provider: 'cloudflare',
+    ip: '162.158.147.80',
+  },
+  gy1: {
+    provider: 'cloudflare',
+    ip: '172.70.117.71',
+  },
   ar1: {
     provider: 'cloudflare',
-    ip: '8.37.41.66',
+    ip: '172.68.216.70',
   },
-  cl1: {
+  bb1: {
     provider: 'cloudflare',
-    ip: '8.36.218.88',
+    ip: '172.69.146.133',
   },
-
-  // North America
+  tt1: {
+    provider: 'cloudflare',
+    ip: '172.71.116.130',
+  },
+  gd1: {
+    provider: 'cloudflare',
+    ip: '172.69.157.77',
+  },
   ca1: {
     provider: 'cloudflare',
     ip: '8.46.117.6',
+  },
+  pr1: {
+    provider: 'cloudflare',
+    ip: '162.158.72.73',
+  },
+  bo1: {
+    provider: 'cloudflare',
+    ip: '172.68.6.139',
   },
   us1: {
     provider: 'cloudflare',
     ip: '8.47.9.6',
   },
+  do1: {
+    provider: 'cloudflare',
+    ip: '172.70.226.77',
+  },
+  cl1: {
+    provider: 'cloudflare',
+    ip: '8.36.218.88',
+  },
+  co1: {
+    provider: 'cloudflare',
+    ip: '141.101.108.88',
+  },
+  jm1: {
+    provider: 'cloudflare',
+    ip: '172.68.78.130',
+  },
+  pe1: {
+    provider: 'cloudflare',
+    ip: '8.36.220.66',
+  },
+  ec1: {
+    provider: 'cloudflare',
+    ip: '162.158.255.130',
+  },
+  // pa1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.68.96.80',
+  // },
+  cr1: {
+    provider: 'cloudflare',
+    ip: '162.158.81.79',
+  },
+  hn1: {
+    provider: 'cloudflare',
+    ip: '172.69.16.138',
+  },
+  gt1: {
+    provider: 'cloudflare',
+    ip: '162.158.11.80',
+  },
   mx1: {
     provider: 'cloudflare',
     ip: '8.46.113.68',
   },
-
+  pf1: {
+    provider: 'cloudflare',
+    ip: '172.69.54.133',
+  },
 }
