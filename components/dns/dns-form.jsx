@@ -53,7 +53,7 @@ export function DNSForm({ onSearch }) {
         form.setValue(key, queryValue)
       }
     }
-  })
+  }, [])
 
   function changeName(e) {
     const urlParser = z.string().url()
