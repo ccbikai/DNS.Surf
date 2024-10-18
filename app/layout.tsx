@@ -56,6 +56,11 @@ export default function RootLayout({
               )
             : null
         }
+        {process.env.FOOTER_INJECT && (
+          <div
+            dangerouslySetInnerHTML={{ __html: process.env.FOOTER_INJECT }}
+          />
+        )}
       </body>
     </html>
   )
