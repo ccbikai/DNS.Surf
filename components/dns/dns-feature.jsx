@@ -7,16 +7,16 @@ export function DNSFeature() {
         <div className="flex flex-wrap items-center -mx-3">
           <div className="order-1 w-full px-3 lg:w-1/2 lg:order-0">
             <div className="w-full lg:max-w-md">
-              <p className="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-3xl font-heading">Exploring the Fascinating Journey of DNS Resolution Worldwide!</p>
+              <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-3xl font-heading">Exploring the Fascinating Journey of DNS Resolution Worldwide!</h2>
               <p className="mb-4 font-medium tracking-tight text-gray-500 xl:mb-6">Querying DNS Resolution Results in Different Regions Worldwide.</p>
               <ul>
                 <li className="flex items-center py-2 space-x-4 xl:py-3">
                   <span className="icon-[subway--world] w-8 h-8 text-teal-500"></span>
-                  <span className="font-medium text-gray-500">Supporting DNS Queries from Different Regions</span>
+                  <h3 className="font-medium text-gray-500">Supporting DNS Queries from Different Regions</h3>
                 </li>
                 <li className="flex items-center py-2 space-x-4 xl:py-3">
                   <span className="icon-[ant-design--cloud-server-outlined] w-8 h-8 text-sky-500"></span>
-                  <span className="font-medium text-gray-500">Supporting 100+ DNS Resolvers</span>
+                  <h3 className="font-medium text-gray-500">Supporting 100+ DNS Resolvers</h3>
                 </li>
               </ul>
             </div>

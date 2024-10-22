@@ -22,11 +22,11 @@ export default function Footer() {
               >
                 <span className="w-6 h-6 icon-[mdi--dots-triangle]"></span>
               </span>
-              <span className="mx-2">
+              <h1 className="mx-2">
                 DNS
                 <dot className="text-indigo-600">.</dot>
                 Surf
-              </span>
+              </h1>
             </a>
           </div>
           <div
