@@ -195,7 +195,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   lb1: {
     provider: 'cloudflare',
-    ip: '172.69.84.133',
+    ip: '172.69.84.80',
   },
   ps1: {
     provider: 'cloudflare',

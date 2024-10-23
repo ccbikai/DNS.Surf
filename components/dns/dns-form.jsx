@@ -50,7 +50,9 @@ export function DNSForm({ onSearch }) {
       const queryValue = searchParams.get(key)
 
       if (queryValue) {
-        form.setValue(key, queryValue)
+        setTimeout(() => {
+          form.setValue(key, queryValue)
+        }, 0)
       }
     }
   }, [])
