@@ -78,7 +78,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://miantiao.me/@chi"
+            href="https://c.im/@mt"
             target="_blank"
             rel="noopener"
             title="Mastodon"
