@@ -26,6 +26,7 @@ export default antfu(
       'react-dom/no-dangerously-set-innerhtml': 'off',
       'react-dom/no-unsafe-target-blank': 'off',
       'react-hooks/exhaustive-deps': 'off',
+      'react-hooks/rules-of-hooks': 'off',
       'regexp/no-unused-capturing-group': 'off',
       'unicorn/prefer-node-protocol': 'off',
     },
