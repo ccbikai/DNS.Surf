@@ -131,7 +131,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   mu1: {
     provider: 'cloudflare',
-    ip: '172.69.92.133',
+    ip: '172.71.229.130',
   },
   re1: {
     provider: 'cloudflare',
