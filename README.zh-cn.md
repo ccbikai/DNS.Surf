@@ -80,5 +80,5 @@ pnpm run dev
 
 ## 赞助
 
-1. [在 𝕏 上关注我](https://x.com/ccbikai)
+1. [在 𝕏 上关注我](https://404.li/x)
 2. [在 GitHub 赞助我](https://github.com/sponsors/ccbikai)
