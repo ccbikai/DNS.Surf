@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-const { addDynamicIconSelectors } = require('@iconify/tailwind')
+import { addDynamicIconSelectors } from '@iconify/tailwind'
+import typography from '@tailwindcss/typography'
+import animate from 'tailwindcss-animate'
 
-module.exports = {
+export default {
   darkMode: ['class'],
   content: [
     './{app,components}/**/*.{html,js,jsx,md,mdx,ts,tsx}',
@@ -72,8 +74,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('tailwindcss-animate'),
+    typography,
+    animate,
     addDynamicIconSelectors(),
   ],
 }
