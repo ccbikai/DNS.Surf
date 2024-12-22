@@ -39,7 +39,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   id1: {
     provider: 'cloudflare',
-    ip: '172.68.153.8',
+    ip: '172.71.161.77',
   },
   bn1: {
     provider: 'cloudflare',
@@ -167,7 +167,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   mg1: {
     provider: 'cloudflare',
-    ip: '172.69.161.77',
+    ip: '172.69.161.17',
   },
   ge1: {
     provider: 'cloudflare',
@@ -177,10 +177,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '172.68.95.77',
   },
-  dj1: {
-    provider: 'cloudflare',
-    ip: '172.68.128.166',
-  },
+  // dj1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.68.128.166',
+  // },
   ke1: {
     provider: 'cloudflare',
     ip: '162.158.40.77',
@@ -475,7 +475,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   co1: {
     provider: 'cloudflare',
-    ip: '141.101.108.88',
+    ip: '141.101.108.100',
   },
   jm1: {
     provider: 'cloudflare',
