@@ -24,7 +24,7 @@ export default function Footer() {
               </span>
               <h1 className="mx-2">
                 DNS
-                <dot className="text-indigo-600">.</dot>
+                <span className="text-indigo-600">.</span>
                 Surf
               </h1>
             </a>
@@ -52,7 +52,7 @@ export default function Footer() {
                 </span>
                 <span className="mx-2">
                   DNS
-                  <dot className="text-indigo-600">.</dot>
+                  <span className="text-indigo-600">.</span>
                   Surf
                 </span>
               </a>

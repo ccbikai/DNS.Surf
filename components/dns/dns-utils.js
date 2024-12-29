@@ -1,8 +1,8 @@
 import { Buffer } from 'buffer'
 import dohjs from 'dohjs'
-import { getFlag } from './utils.ts'
 // const punycode = require('punycode/')
 import punycode from 'punycode/punycode.js'
+import { getFlag } from './utils.ts'
 
 const { makeQuery, dnsPacket } = dohjs
 

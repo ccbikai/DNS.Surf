@@ -19,7 +19,7 @@ export default function Footer() {
           className="logo select-none text-xl font-black leading-none text-gray-900"
         >
           DNS
-          <dot className="text-indigo-600">.</dot>
+          <span className="text-indigo-600">.</span>
           Surf
         </a>
         <a

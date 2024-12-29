@@ -1,4 +1,4 @@
-import { Hono } from 'hono'
+import { type Context, Hono, type Next } from 'hono'
 import { cors } from 'hono/cors'
 import { CLOUDFLARE_REGIONS } from '../config/cloudflare'
 import doh from '../doh.json'
@@ -19,7 +19,7 @@ function getResolver(resolver: string) {
   return dohServer
 }
 
-app.use('*', async (c, next) => {
+app.use('*', async (c: Context, next: Next) => {
   const corsMiddlewareHandler = cors({
     origin: (origin: string) => {
       if (!origin)
@@ -32,7 +32,7 @@ app.use('*', async (c, next) => {
   return corsMiddlewareHandler(c, next)
 })
 
-app.get('/api/region/*', async (c) => {
+app.get('/api/region/*', async (c: Context) => {
   const accept = c.req.header('accept') || ''
   const { search } = new URL(c.req.raw.url)
   const { resolver = defaultResolver, dns, region } = c.req.query()
