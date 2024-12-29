@@ -46,7 +46,7 @@ export default function Footer() {
             <span className="icon-[mdi--email] h-6 w-6"></span>
           </a>
           <a
-            href="https://t.me/htmlzone"
+            href="https://404.li/telegram"
             target="_blank"
             rel="noopener"
             title="Telegram"
@@ -56,7 +56,7 @@ export default function Footer() {
             <span className="icon-[mdi--telegram] h-6 w-6"></span>
           </a>
           <a
-            href="https://mt.ci"
+            href="https://404.li/blog"
             target="_blank"
             rel="noopener"
             title="Blog"
@@ -67,7 +67,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://x.com/0xKaiBi"
+            href="https://404.li/kai"
             target="_blank"
             rel="noopener"
             title="Twitter"
@@ -78,7 +78,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://c.im/@mt"
+            href="https://404.li/mastodon"
             target="_blank"
             rel="noopener"
             title="Mastodon"
