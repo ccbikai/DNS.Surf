@@ -12,10 +12,10 @@
     "local": "vercel dev",
     "worker": "wrangler dev",
     "deploy": "wrangler deploy",
-    "postinstall": "node scripts/colo.mjs && simple-git-hooks || true",
-    "cf-dns": "tsx --env-file=.env scripts/cf-dns.mjs",
-    "monitor": "tsx scripts/monitor.mjs",
-    "dev:monitor": "tsx --env-file=.env scripts/monitor.mjs"
+    "postinstall": "tsx scripts/colo.ts && simple-git-hooks || true",
+    "cf-dns": "tsx --env-file=.env scripts/cf-dns.ts",
+    "monitor": "tsx scripts/monitor.ts",
+    "dev:monitor": "tsx --env-file=.env scripts/monitor.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",

@@ -3,11 +3,24 @@ import { CLOUDFLARE_REGIONS } from '../config/cloudflare'
 
 const WORKER_HOST = process.env.WORKER_HOST
 
+interface DNSRecord {
+  id: string
+  name: string
+  type: string
+  content: string
+  proxied: boolean
+  zone_id: string
+}
+
 const cloudflare = new Cloudflare({
   apiToken: process.env.CLOUDFLARE_API_TOKEN,
 })
 
-async function updateDNS(existingRecords, dnsName, ip) {
+async function updateDNS(
+  existingRecords: DNSRecord[],
+  dnsName: string,
+  ip: string,
+): Promise<void> {
   const existingRecord = existingRecords.find(record => record.name === dnsName)
   if (existingRecord) {
     if (existingRecord.content === ip) {
@@ -35,13 +48,13 @@ async function updateDNS(existingRecords, dnsName, ip) {
   }
 }
 
-async function main() {
-  const { result: existingRecords = [] } = await cloudflare.dns.records.list({
-    zone_id: process.env.CLOUDFLARE_ZONE_ID,
+async function main(): Promise<void> {
+  const { result: existingRecords = [] } = (await cloudflare.dns.records.list({
+    zone_id: process.env.CLOUDFLARE_ZONE_ID as string,
     per_page: 5000000,
     type: 'A',
     search: WORKER_HOST,
-  })
+  })) as unknown as { result: DNSRecord[] }
 
   for (const region in CLOUDFLARE_REGIONS) {
     const dnsName = `${region}.${WORKER_HOST}`

@@ -7,13 +7,13 @@ if (process.env.http_proxy) {
   setGlobalDispatcher(new ProxyAgent(process.env.http_proxy))
 }
 
-const { values: args = {} } = parseArgs({
+const { values: args } = parseArgs({
   options: {
     regions: {
       type: 'string',
     },
   },
-})
+}) as { values: { regions?: string } }
 
 const WORKER_HOST = process.env.WORKER_HOST
 
