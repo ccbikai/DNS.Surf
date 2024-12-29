@@ -165,10 +165,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '162.158.83.70',
   },
-  mg1: {
-    provider: 'cloudflare',
-    ip: '172.69.161.17',
-  },
+  // mg1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.69.161.17',
+  // },
   ge1: {
     provider: 'cloudflare',
     ip: '162.158.151.77',

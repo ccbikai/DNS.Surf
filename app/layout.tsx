@@ -3,16 +3,6 @@ import Script from 'next/script'
 import { SITE } from '../config'
 import './globals.css'
 
-// 扩展申明
-declare global{
-  namespace JSX{
-    interface IntrinsicElements {
-      // 扩展 IntrinsicElements 否则无法识别自定义标签
-      dot: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
-    }
-  }
-}
-
 export const metadata: Metadata = {
   ...SITE,
   title: `${SITE.title} - ${SITE.tagline}`,

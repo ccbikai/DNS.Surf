@@ -80,5 +80,5 @@ pnpm run dev
 
 ## Sponsorship
 
-1. [Follow me on 𝕏](https://x.com/0xKaiBi)
+1. [Follow me on 𝕏](https://404.li/kai)
 2. [Sponsor me on GitHub](https://github.com/sponsors/ccbikai)
