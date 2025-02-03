@@ -407,7 +407,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   pt1: {
     provider: 'cloudflare',
-    ip: '172.68.100.17',
+    ip: '172.68.102.62',
   },
   sn1: {
     provider: 'cloudflare',
@@ -419,7 +419,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   br1: {
     provider: 'cloudflare',
-    ip: '172.69.189.77',
+    ip: '172.68.29.68',
   },
   sr1: {
     provider: 'cloudflare',
