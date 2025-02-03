@@ -17,10 +17,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '8.24.243.2',
   },
-  gu1: {
-    provider: 'cloudflare',
-    ip: '172.69.197.17',
-  },
+  // gu1: {
+  //   provider: 'cloudflare',
+  //   ip: '172.69.197.17',
+  // },
   jp1: {
     provider: 'cloudflare',
     ip: '8.34.201.6',
@@ -93,10 +93,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '172.68.132.73',
   },
-  // bt1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.69.219.130',
-  // },
+  bt1: {
+    provider: 'cloudflare',
+    ip: '172.69.219.133',
+  },
   in1: {
     provider: 'cloudflare',
     ip: '8.28.213.66',
@@ -113,10 +113,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '172.68.207.166',
   },
-  // pk1: {
-  //   provider: 'cloudflare',
-  //   ip: '162.158.199.70',
-  // },
+  pk1: {
+    provider: 'cloudflare',
+    ip: '172.69.242.135',
+  },
   mv1: {
     provider: 'cloudflare',
     ip: '162.158.143.77',
@@ -165,10 +165,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '162.158.83.70',
   },
-  // mg1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.69.161.17',
-  // },
+  mg1: {
+    provider: 'cloudflare',
+    ip: '172.69.161.144',
+  },
   ge1: {
     provider: 'cloudflare',
     ip: '162.158.151.77',
@@ -177,10 +177,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '172.68.95.77',
   },
-  // dj1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.68.128.166',
-  // },
+  dj1: {
+    provider: 'cloudflare',
+    ip: '172.68.128.162',
+  },
   ke1: {
     provider: 'cloudflare',
     ip: '162.158.40.77',
@@ -249,22 +249,22 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '172.70.180.138',
   },
-  // ro1: {
-  //   provider: 'cloudflare',
-  //   ip: '8.43.226.22',
-  // },
-  // bw1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.68.66.70',
-  // },
-  // lt1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.69.188.78',
-  // },
-  // fi1: {
-  //   provider: 'cloudflare',
-  //   ip: '162.158.237.26',
-  // },
+  ro1: {
+    provider: 'cloudflare',
+    ip: '162.158.18.210',
+  },
+  bw1: {
+    provider: 'cloudflare',
+    ip: '172.68.66.138',
+  },
+  lt1: {
+    provider: 'cloudflare',
+    ip: '172.69.188.99',
+  },
+  fi1: {
+    provider: 'cloudflare',
+    ip: '162.158.238.10',
+  },
   ee1: {
     provider: 'cloudflare',
     ip: '172.69.136.90',
@@ -323,7 +323,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   // cd1: {
   //   provider: 'cloudflare',
-  //   ip: '172.69.104.68',
+  //   ip: '172.69.104.74',
   // },
   cz1: {
     provider: 'cloudflare',
@@ -421,10 +421,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '172.69.189.77',
   },
-  // sr1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.68.131.140',
-  // },
+  sr1: {
+    provider: 'cloudflare',
+    ip: '172.68.131.140',
+  },
   py1: {
     provider: 'cloudflare',
     ip: '162.158.147.80',
@@ -437,10 +437,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '172.68.216.70',
   },
-  // bb1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.69.146.133',
-  // },
+  bb1: {
+    provider: 'cloudflare',
+    ip: '172.69.146.130',
+  },
   tt1: {
     provider: 'cloudflare',
     ip: '172.71.116.130',
@@ -489,10 +489,10 @@ export const CLOUDFLARE_REGIONS = {
     provider: 'cloudflare',
     ip: '162.158.255.130',
   },
-  // pa1: {
-  //   provider: 'cloudflare',
-  //   ip: '172.68.96.80',
-  // },
+  pa1: {
+    provider: 'cloudflare',
+    ip: '172.68.96.155',
+  },
   cr1: {
     provider: 'cloudflare',
     ip: '162.158.81.79',
