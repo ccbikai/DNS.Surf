@@ -7,7 +7,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   nz1: {
     provider: 'cloudflare',
-    ip: '8.39.204.6',
+    ip: '172.71.88.133',
   },
   nc1: {
     provider: 'cloudflare',
@@ -19,7 +19,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   gu1: {
     provider: 'cloudflare',
-    ip: '172.69.197.69',
+    ip: '172.69.197.17',
   },
   jp1: {
     provider: 'cloudflare',
@@ -27,7 +27,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   kr1: {
     provider: 'cloudflare',
-    ip: '8.38.149.88',
+    ip: '162.158.15.100',
   },
   ph1: {
     provider: 'cloudflare',
@@ -35,7 +35,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   tw1: {
     provider: 'cloudflare',
-    ip: '8.39.126.66',
+    ip: '172.71.139.88',
   },
   id1: {
     provider: 'cloudflare',
@@ -67,11 +67,11 @@ export const CLOUDFLARE_REGIONS = {
   },
   sg1: {
     provider: 'cloudflare',
-    ip: '8.25.96.66',
+    ip: '162.158.189.16',
   },
   my1: {
     provider: 'cloudflare',
-    ip: '8.39.125.69',
+    ip: '172.69.19.180',
   },
   la1: {
     provider: 'cloudflare',
@@ -91,7 +91,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   bd1: {
     provider: 'cloudflare',
-    ip: '162.158.9.130',
+    ip: '172.68.132.73',
   },
   // bt1: {
   //   provider: 'cloudflare',
@@ -231,7 +231,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   ua1: {
     provider: 'cloudflare',
-    ip: '8.42.51.6',
+    ip: '172.68.237.53',
   },
   rw1: {
     provider: 'cloudflare',
@@ -267,7 +267,7 @@ export const CLOUDFLARE_REGIONS = {
   // },
   ee1: {
     provider: 'cloudflare',
-    ip: '172.69.136.70',
+    ip: '172.69.136.90',
   },
   lv1: {
     provider: 'cloudflare',
@@ -287,11 +287,11 @@ export const CLOUDFLARE_REGIONS = {
   },
   pl1: {
     provider: 'cloudflare',
-    ip: '8.40.107.77',
+    ip: '162.158.103.18',
   },
   rs1: {
     provider: 'cloudflare',
-    ip: '8.44.1.30',
+    ip: '172.68.152.70',
   },
   al1: {
     provider: 'cloudflare',
@@ -303,7 +303,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   se1: {
     provider: 'cloudflare',
-    ip: '8.40.140.6',
+    ip: '172.69.235.130',
   },
   sk1: {
     provider: 'cloudflare',
@@ -315,7 +315,7 @@ export const CLOUDFLARE_REGIONS = {
   // },
   at1: {
     provider: 'cloudflare',
-    ip: '8.40.111.66',
+    ip: '141.101.105.10',
   },
   hr1: {
     provider: 'cloudflare',
@@ -327,15 +327,15 @@ export const CLOUDFLARE_REGIONS = {
   // },
   cz1: {
     provider: 'cloudflare',
-    ip: '8.40.30.6',
+    ip: '172.68.213.25',
   },
   it1: {
     provider: 'cloudflare',
-    ip: '8.21.9.6',
+    ip: '162.158.129.33',
   },
   de1: {
     provider: 'cloudflare',
-    ip: '8.43.121.11',
+    ip: '162.158.202.10',
   },
   ao1: {
     provider: 'cloudflare',
@@ -343,11 +343,11 @@ export const CLOUDFLARE_REGIONS = {
   },
   dk1: {
     provider: 'cloudflare',
-    ip: '8.43.224.111',
+    ip: '172.68.243.7',
   },
   no1: {
     provider: 'cloudflare',
-    ip: '8.41.36.66',
+    ip: '162.158.222.20',
   },
   tn1: {
     provider: 'cloudflare',
@@ -367,11 +367,11 @@ export const CLOUDFLARE_REGIONS = {
   },
   fr1: {
     provider: 'cloudflare',
-    ip: '8.36.219.66',
+    ip: '172.69.187.29',
   },
   nl1: {
     provider: 'cloudflare',
-    ip: '8.19.8.66',
+    ip: '172.71.102.13',
   },
   be1: {
     provider: 'cloudflare',
@@ -391,7 +391,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   gb1: {
     provider: 'cloudflare',
-    ip: '8.42.172.66',
+    ip: '172.70.161.19',
   },
   bf1: {
     provider: 'cloudflare',
@@ -407,7 +407,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   pt1: {
     provider: 'cloudflare',
-    ip: '8.42.245.88',
+    ip: '172.68.100.17',
   },
   sn1: {
     provider: 'cloudflare',
@@ -419,7 +419,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   br1: {
     provider: 'cloudflare',
-    ip: '8.18.113.166',
+    ip: '172.69.189.77',
   },
   // sr1: {
   //   provider: 'cloudflare',
@@ -463,7 +463,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   us1: {
     provider: 'cloudflare',
-    ip: '8.47.9.6',
+    ip: '108.162.246.35',
   },
   do1: {
     provider: 'cloudflare',
