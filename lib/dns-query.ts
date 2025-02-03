@@ -27,7 +27,7 @@ app.use('*', async (c: Context, next: Next) => {
       const { hostname } = new URL(origin)
       return hostname.endsWith(c.env.CORS_ORIGIN as string) ? origin : ''
     },
-    exposeHeaders: ['X-Country', 'X-Location'],
+    exposeHeaders: ['X-Country', 'X-Location', 'X-Colo'],
   })
   return corsMiddlewareHandler(c, next)
 })
@@ -73,9 +73,10 @@ app.get('/api/region/*', async (c: Context) => {
       },
     })
 
-  let regionInfo: { country: string, location: string } = {
+  let regionInfo: { country: string, location: string, colo: string } = {
     country: '',
     location: '',
+    colo: '',
   }
 
   if (requestFromWorker) {
@@ -87,6 +88,7 @@ app.get('/api/region/*', async (c: Context) => {
     ...Object.fromEntries(res.headers.entries()),
     'X-Country': res.headers.get('X-Country') || regionInfo.country || '',
     'X-Location': res.headers.get('X-Location') || regionInfo.location || '',
+    'X-Colo': res.headers.get('X-Colo') || regionInfo.colo || '',
   })
 })
 

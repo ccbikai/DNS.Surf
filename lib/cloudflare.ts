@@ -5,5 +5,5 @@ export async function getWorkerLocation() {
   const text = await res.text()
 
   const colo = /^colo=(.*)$/m.exec(text)?.[1] as keyof typeof COLOS
-  return COLOS[colo] || { country: '', location: '' }
+  return COLOS[colo] || { country: '', location: '', colo: '' }
 }

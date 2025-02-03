@@ -10,6 +10,7 @@ const COLOS = Object.values(locations)
       acc[location.iata?.toUpperCase()] = {
         country: location.cca2?.toUpperCase(),
         location: [location.city, displayNames.of(location.cca2?.toUpperCase())].filter(Boolean).join(', '),
+        colo: location.iata?.toUpperCase(),
       }
     }
     return acc
