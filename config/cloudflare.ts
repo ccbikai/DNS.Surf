@@ -243,7 +243,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   tr1: {
     provider: 'cloudflare',
-    ip: '172.69.250.80',
+    ip: '104.23.165.20',
   },
   by1: {
     provider: 'cloudflare',
@@ -483,7 +483,7 @@ export const CLOUDFLARE_REGIONS = {
   },
   pe1: {
     provider: 'cloudflare',
-    ip: '198.41.224.80',
+    ip: '172.70.181.70',
   },
   ec1: {
     provider: 'cloudflare',

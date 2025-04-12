@@ -30,8 +30,8 @@ async function monitorRegion(region) {
         'Accept': 'application/dns-message',
       },
       timeout: 5000,
-      retry: 2,
-      retryDelay: 100,
+      retry: 5,
+      retryDelay: 500,
       responseType: 'blob',
     })
     if (res.ok) {
